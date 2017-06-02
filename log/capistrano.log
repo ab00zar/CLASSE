@@ -167,3 +167,32 @@ and the repository exists.
 
 Please make sure you have the correct access rights
 and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-02 15:03:57 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [c5313bc4] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [c5313bc4] Command: [ -d ~/.rvm ]
+ DEBUG [c5313bc4] Finished in 6.133 seconds with exit status 0 (successful).
+ DEBUG [bd92b441] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [bd92b441] Command: ~/.rvm/bin/rvm version
+ DEBUG [bd92b441] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [bd92b441] Finished in 0.308 seconds with exit status 0 (successful).
+ DEBUG [7e6e4bbc] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [7e6e4bbc] Command: ~/.rvm/bin/rvm current
+ DEBUG [7e6e4bbc] 	ruby-2.4.0
+ DEBUG [7e6e4bbc] Finished in 0.304 seconds with exit status 0 (successful).
+ DEBUG [d318f5b5] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [d318f5b5] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [d318f5b5] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [d318f5b5] Finished in 0.492 seconds with exit status 0 (successful).
+  INFO [3ae8a77c] Running /usr/bin/env mkdir -p /tmp as pilmngr@172.17.26.9
+ DEBUG [3ae8a77c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [3ae8a77c] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 100.0%
+  INFO [54869b2d] Running /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh as pilmngr@172.17.26.9
+ DEBUG [54869b2d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh
+  INFO [54869b2d] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [c5134887] Running /usr/bin/env git ls-remote https://aboozar.rajabi@univ-lehavre.fr:16051985@forgeb1.univ-lehavre.fr/ HEAD as pilmngr@172.17.26.9
+ DEBUG [c5134887] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote https://aboozar.rajabi@univ-lehavre.fr:16051985@forgeb1.univ-lehavre.fr/ HEAD )
+ DEBUG [c5134887] 	fatal: unable to access 'https://aboozar.rajabi@univ-lehavre.fr:16051985@forgeb1.univ-lehavre.fr/': Port number out of range
