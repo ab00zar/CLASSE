@@ -225,3 +225,32 @@ and the repository exists.
   INFO [5b0e49be] Running /usr/bin/env git ls-remote https://rajabia:16051985@forgeb1.univ-lehavre.fr/ HEAD as pilmngr@172.17.26.9
  DEBUG [5b0e49be] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote https://rajabia:16051985@forgeb1.univ-lehavre.fr/ HEAD )
  DEBUG [5b0e49be] 	fatal: repository 'https://rajabia:16051985@forgeb1.univ-lehavre.fr/' not found
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-02 15:07:45 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [dd9eb5fb] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [dd9eb5fb] Command: [ -d ~/.rvm ]
+ DEBUG [dd9eb5fb] Finished in 5.608 seconds with exit status 0 (successful).
+ DEBUG [cca20ffa] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [cca20ffa] Command: ~/.rvm/bin/rvm version
+ DEBUG [cca20ffa] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [cca20ffa] Finished in 0.299 seconds with exit status 0 (successful).
+ DEBUG [4183018c] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [4183018c] Command: ~/.rvm/bin/rvm current
+ DEBUG [4183018c] 	ruby-2.4.0
+ DEBUG [4183018c] Finished in 0.291 seconds with exit status 0 (successful).
+ DEBUG [932a1f17] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [932a1f17] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [932a1f17] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [932a1f17] Finished in 0.501 seconds with exit status 0 (successful).
+  INFO [fd549d14] Running /usr/bin/env mkdir -p /tmp as pilmngr@172.17.26.9
+ DEBUG [fd549d14] Command: /usr/bin/env mkdir -p /tmp
+  INFO [fd549d14] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 100.0%
+  INFO [6b56736d] Running /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh as pilmngr@172.17.26.9
+ DEBUG [6b56736d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh
+  INFO [6b56736d] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [ae555543] Running /usr/bin/env git ls-remote https://rajabia:16051985@forgeb1.univ-lehavre.fr/cirmar-interface HEAD as pilmngr@172.17.26.9
+ DEBUG [ae555543] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote https://rajabia:16051985@forgeb1.univ-lehavre.fr/cirmar-interface HEAD )
+ DEBUG [ae555543] 	fatal: repository 'https://rajabia:16051985@forgeb1.univ-lehavre.fr/cirmar-interface/' not found

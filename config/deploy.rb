@@ -2,8 +2,8 @@
 lock "3.8.1"
 
 set :application, "cirmar"
-set :repo_url, "https://rajabia:16051985@forgeb1.univ-lehavre.fr/cirmar-interface"
-#set :repo_url, "git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git" 
+#set :repo_url, "https://rajabia:16051985@forgeb1.univ-lehavre.fr/cirmar-interface"
+set :repo_url, "git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git" 
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
