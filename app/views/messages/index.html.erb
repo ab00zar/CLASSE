@@ -1,0 +1,195 @@
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">CIRMAR Projet</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <% if user_signed_in? %>
+                                <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bienvenu! <span class="caret"></span></a>
+                                  <ul class="dropdown-menu" style="background-color: #E7E7E7;">
+                                    <li><a href="/messages" >Messages</a></li><!-- style="color: #555;" -->
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/users/sign_out">Log Out</a></li>
+                                  </ul>
+                                </li>
+                    <% end %>  
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+<div class="row">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-2">
+            <div class="panel panel-primary">
+                  <div class="panel-heading">
+                        <h4 class="panel-title">Recherche Plus</h4>
+                  </div>
+                  <div class="panel-body">
+                          <h6><i class="fa fa-calendar black fa-fw fa-lg" aria-hidden="true"></i> Date</h6>
+                          <br/>
+                          <br/>
+                          <h6><i class="fa fa-envelope-o fa-fw fa-lg" aria-hidden="true"></i> Type de messages</h6>
+                              <form action="form-control">
+                                    <input type="radio" name="m-button" id="mall" value="all" <%= if params[:type_de_message] == "all" || params[:type_de_message].blank?
+                                      "checked" 
+                                      end %> > All<br>                                  
+                                    <input type="radio" name="m-button" id="m1" value="1" <%= if params[:type_de_message] == "1" 
+                                      "checked" 
+                                      end %> > 1<br>      
+                                    <input type="radio" name="m-button" id="m2" value="2" <%= if params[:type_de_message] == "2" 
+                                      "checked" 
+                                      end %> > 2<br> 
+                                    <input type="radio" name="m-button" id="m3" value="3" <%= if params[:type_de_message] == "3" 
+                                      "checked" 
+                                      end %> > 3<br> 
+                                    <input type="radio" name="m-button" id="m4" value="4" <%= if params[:type_de_message] == "4" 
+                                      "checked" 
+                                      end %> > 4<br> 
+                                    <input type="radio" name="m-button" id="m5" value="5" <%= if params[:type_de_message] == "5" 
+                                      "checked" 
+                                      end %> > 5<br> 
+                                    <input type="radio" name="m-button" id="m18" value="18" <%= if params[:type_de_message] == "18" 
+                                      "checked" 
+                                      end %> > 18<br>
+                                    <input type="radio" name="m-button" id="m19" value="19" <%= if params[:type_de_message] == "19" 
+                                      "checked" 
+                                      end %> >19<br>
+                                </form>                                                                    
+                          <br/>
+                          <h6><i class="fa fa-ship fa-fw fa-lg" aria-hidden="true"></i> Type de navire</h6>
+                              <form action="form-control">
+                                    <div style="font-size: 10px bold;">
+                                    <input type="radio" name="navire-button" id="nall" value="all" <%= if params[:type_de_navire] == "all" 
+                                      "checked" 
+                                      end %> > All<br>                                
+                                     <input type="radio" name="navire-button" id="n50" value="50" <%= if params[:type_de_navire] == "50" 
+                                      "checked" 
+                                      end %> > Pilot Vessel (50)<br>
+                                    <input type="radio" name="navire-button" id="n51" value="51" <%= if params[:type_de_navire] == "51" 
+                                      "checked" 
+                                      end %> > Search & Rescue vessels (51)<br>
+                                    <input type="radio" name="navire-button" id="n52" value="52" <%= if params[:type_de_navire] == "52" 
+                                      "checked" 
+                                      end %> > Tugs (52)<br>
+                                    <input type="radio" name="navire-button" id="n53" value="53" <%= if params[:type_de_navire] == "53" 
+                                      "checked" 
+                                      end %> > Port tenders (53)<br>
+                                    <input type="radio" name="navire-button" id="n54" value="54" <%= if params[:type_de_navire] == "54" 
+                                      "checked" 
+                                      end %> > Vessels with anti-pollution facilities or equipment (54)<br>
+                                    <input type="radio" name="navire-button" id="n55" value="55" <%= if params[:type_de_navire] == "55" 
+                                      "checked" 
+                                      end %> > Law enforcement vessels (55)<br>
+                                    <input type="radio" name="navire-button" id="n56" value="56" <%= if params[:type_de_navire] == "56" 
+                                      "checked" 
+                                      end %> > Spare - for assignments to local vessles (56)<br>
+                                    <input type="radio" name="navire-button" id="n57" value="57" <%= if params[:type_de_navire] == "57" 
+                                      "checked" 
+                                      end %> > Spare - for assignments to local vessles (57)<br>
+                                    <input type="radio" name="navire-button" id="n58" value="58" <%= if params[:type_de_navire] == "58" 
+                                      "checked" 
+                                      end %> > Medical Transports (58)<br>
+                                    <input type="radio" name="navire-button" id="n59" value="59" <%= if params[:type_de_navire] == "59" 
+                                      "checked" 
+                                      end %> > Ships and aircrafts of States not parties to an armed conflict (59)<br>
+                                      </div>
+                              </form>                          
+                          <br/>
+                  </div>
+              </div>        
+      </div>      
+      <div class="col-sm-8">
+            <div class="panel panel-primary">
+                  <div class="panel-heading">
+                        <h4 class="panel-title">Messages</h4>
+                  </div>
+                  <div class="panel-body">
+                          <p id="notice"><%= notice %></p>
+                          <p>
+                            Download:
+                            <%= link_to "CSV", messages_path(format: "csv", :type_de_message => params[:type_de_message],
+                            :type_de_navire => params[:type_de_navire]) %> 
+                            <!-- |
+                            <%= link_to "Excel", messages_path(format: "xls") %> -->
+                          </p>
+
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Type</th>
+                                <th>Repeatindicator</th>
+                                <th>MMSI</th>
+                                <th>Longitude</th>
+                                <th>Latitude</th>
+                                <th>Course Over Ground</th>
+                                <th>Ship Type</th>
+                                <th colspan="1"></th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <% @messages.each do |message| %>
+                                <tr>
+                                  <td><%= message.message_type %></td>
+                                  <td><%= message.repeat_indicator %></td>
+                                  <td><%= message.mmsi %></td>
+                                  <td><%= if message.has_attribute?("longitude") 
+                                                          message.longitude 
+                                                    end %>
+                                  </td>
+                                  <td><%= if message.has_attribute?("latitude") 
+                                                          message.latitude
+                                                    end %>
+                                  </td>
+                                  <td><%= if message.has_attribute?("course_over_ground") 
+                                                          message.course_over_ground
+                                                    end %>
+                                  </td>
+                                  <td><%= if message.has_attribute?("ship_type") 
+                                                          message.ship_type
+                                                    end %>
+                                  </td>
+                                  <td><%= link_to 'Show', message %></td>
+<!--                                   <td><%= link_to 'Edit', edit_message_path(message) %></td>
+                                  <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+                                </tr>
+                              <% end %>
+                            </tbody>
+                          </table>
+                          <%= paginate @messages %>
+                  </div>
+              </div>         
+
+<!--             <div align="right">
+            <%= button_to "Save", csv_messages_path, :class => "btn btn-success", type: "submit" %>
+            </div> -->
+            <br>
+
+<!--             <%= link_to 'New Message', new_message_path %>
+ -->      </div>
+       <div class="col-sm-1">
+      </div>     
+</div>
+<script src="assets/search_filters.js"></script>

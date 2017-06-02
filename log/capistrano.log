@@ -1,0 +1,135 @@
+# Logfile created on 2017-06-01 17:22:31 +0200 by logger.rb/v1.2.7
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-01 17:22:31 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [be928a06] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [be928a06] Command: [ -d ~/.rvm ]
+ DEBUG [be928a06] Finished in 11.125 seconds with exit status 0 (successful).
+ DEBUG [cbb295dc] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [cbb295dc] Command: ~/.rvm/bin/rvm version
+ DEBUG [cbb295dc] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [cbb295dc] Finished in 0.312 seconds with exit status 0 (successful).
+ DEBUG [43207a6f] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [43207a6f] Command: ~/.rvm/bin/rvm current
+ DEBUG [43207a6f] 	ruby-2.4.0
+ DEBUG [43207a6f] Finished in 0.288 seconds with exit status 0 (successful).
+ DEBUG [ce0f2100] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [ce0f2100] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [ce0f2100] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [ce0f2100] Finished in 0.473 seconds with exit status 0 (successful).
+  INFO [29c481bc] Running /usr/bin/env mkdir -p /tmp as pilmngr@172.17.26.9
+ DEBUG [29c481bc] Command: /usr/bin/env mkdir -p /tmp
+  INFO [29c481bc] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 100.0%
+  INFO [d4566dbe] Running /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh as pilmngr@172.17.26.9
+ DEBUG [d4566dbe] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh
+  INFO [d4566dbe] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [99eed769] Running /usr/bin/env git ls-remote git@github.com:ab00zar/cirmar.git HEAD as pilmngr@172.17.26.9
+ DEBUG [99eed769] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote git@github.com:ab00zar/cirmar.git HEAD )
+ DEBUG [99eed769] 	Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+ DEBUG [99eed769] 	Permission denied (publickey).
+ DEBUG [99eed769] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-01 17:23:06 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [27a2f51c] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [27a2f51c] Command: [ -d ~/.rvm ]
+ DEBUG [27a2f51c] Finished in 10.775 seconds with exit status 0 (successful).
+ DEBUG [901295ca] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [901295ca] Command: ~/.rvm/bin/rvm version
+ DEBUG [901295ca] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [901295ca] Finished in 0.301 seconds with exit status 0 (successful).
+ DEBUG [edc07d64] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [edc07d64] Command: ~/.rvm/bin/rvm current
+ DEBUG [edc07d64] 	ruby-2.4.0
+ DEBUG [edc07d64] Finished in 0.294 seconds with exit status 0 (successful).
+ DEBUG [ddaac10c] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [ddaac10c] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [ddaac10c] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [ddaac10c] Finished in 0.513 seconds with exit status 0 (successful).
+  INFO [50530735] Running /usr/bin/env mkdir -p /tmp as pilmngr@172.17.26.9
+ DEBUG [50530735] Command: /usr/bin/env mkdir -p /tmp
+  INFO [50530735] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 100.0%
+  INFO [a1d954f0] Running /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh as pilmngr@172.17.26.9
+ DEBUG [a1d954f0] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh
+  INFO [a1d954f0] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [fbff881e] Running /usr/bin/env git ls-remote git@github.com:ab00zar/cirmar.git HEAD as pilmngr@172.17.26.9
+ DEBUG [fbff881e] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote git@github.com:ab00zar/cirmar.git HEAD )
+ DEBUG [fbff881e] 	Permission denied (publickey).
+ DEBUG [fbff881e] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-02 11:14:23 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [3309bfe5] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [3309bfe5] Command: [ -d ~/.rvm ]
+ DEBUG [3309bfe5] Finished in 9.252 seconds with exit status 0 (successful).
+ DEBUG [94c7537b] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [94c7537b] Command: ~/.rvm/bin/rvm version
+ DEBUG [94c7537b] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [94c7537b] Finished in 0.309 seconds with exit status 0 (successful).
+ DEBUG [1cf9736c] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [1cf9736c] Command: ~/.rvm/bin/rvm current
+ DEBUG [1cf9736c] 	ruby-2.4.0
+ DEBUG [1cf9736c] Finished in 0.298 seconds with exit status 0 (successful).
+ DEBUG [dd51a99d] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [dd51a99d] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [dd51a99d] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [dd51a99d] Finished in 0.848 seconds with exit status 0 (successful).
+  INFO [023f5487] Running /usr/bin/env mkdir -p /tmp as pilmngr@172.17.26.9
+ DEBUG [023f5487] Command: /usr/bin/env mkdir -p /tmp
+  INFO [023f5487] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 100.0%
+  INFO [70a82be1] Running /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh as pilmngr@172.17.26.9
+ DEBUG [70a82be1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh
+  INFO [70a82be1] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [6905ba22] Running /usr/bin/env git ls-remote git@github.com:ab00zar/cirmar.git HEAD as pilmngr@172.17.26.9
+ DEBUG [6905ba22] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote git@github.com:ab00zar/cirmar.git HEAD )
+ DEBUG [6905ba22] 	Warning: Permanently added the RSA host key for IP address '192.30.253.112' to the list of known hosts.
+ DEBUG [6905ba22] 	Permission denied (publickey).
+ DEBUG [6905ba22] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-02 11:45:59 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [9bb28940] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [9bb28940] Command: [ -d ~/.rvm ]
+ DEBUG [9bb28940] Finished in 6.091 seconds with exit status 0 (successful).
+ DEBUG [9ea33fee] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [9ea33fee] Command: ~/.rvm/bin/rvm version
+ DEBUG [9ea33fee] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [9ea33fee] Finished in 0.305 seconds with exit status 0 (successful).
+ DEBUG [be219225] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [be219225] Command: ~/.rvm/bin/rvm current
+ DEBUG [be219225] 	ruby-2.4.0
+ DEBUG [be219225] Finished in 0.284 seconds with exit status 0 (successful).
+ DEBUG [49a8161a] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [49a8161a] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [49a8161a] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [49a8161a] Finished in 0.489 seconds with exit status 0 (successful).
+  INFO [48e42a14] Running /usr/bin/env mkdir -p /tmp as pilmngr@172.17.26.9
+ DEBUG [48e42a14] Command: /usr/bin/env mkdir -p /tmp
+  INFO [48e42a14] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 100.0%
+  INFO [75756890] Running /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh as pilmngr@172.17.26.9
+ DEBUG [75756890] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh
+  INFO [75756890] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [5ce8c7ee] Running /usr/bin/env git ls-remote git@github.com:ab00zar/cirmar.git HEAD as pilmngr@172.17.26.9
+ DEBUG [5ce8c7ee] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote git@github.com:ab00zar/cirmar.git HEAD )
+ DEBUG [5ce8c7ee] 	Permission denied (publickey).
+ DEBUG [5ce8c7ee] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
