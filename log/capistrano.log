@@ -297,3 +297,527 @@ and the repository exists.
  DEBUG [66b60ded] Command: [ -f ~/deploy/cirmar/shared/config/database.yml ]
  DEBUG [66b60ded] Finished in 0.011 seconds with exit status 1 (failed).
  ERROR linked file ~/deploy/cirmar/shared/config/database.yml does not exist on 172.17.26.9
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-02 15:20:49 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [d338c096] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [d338c096] Command: [ -d ~/.rvm ]
+ DEBUG [d338c096] Finished in 5.748 seconds with exit status 0 (successful).
+ DEBUG [cf49ebf6] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [cf49ebf6] Command: ~/.rvm/bin/rvm version
+ DEBUG [cf49ebf6] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [cf49ebf6] Finished in 0.307 seconds with exit status 0 (successful).
+ DEBUG [96b0f6ea] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [96b0f6ea] Command: ~/.rvm/bin/rvm current
+ DEBUG [96b0f6ea] 	ruby-2.4.0
+ DEBUG [96b0f6ea] Finished in 0.301 seconds with exit status 0 (successful).
+ DEBUG [7b76e491] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [7b76e491] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [7b76e491] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [7b76e491] Finished in 0.513 seconds with exit status 0 (successful).
+  INFO [0fcf0d91] Running /usr/bin/env mkdir -p /tmp as pilmngr@172.17.26.9
+ DEBUG [0fcf0d91] Command: /usr/bin/env mkdir -p /tmp
+  INFO [0fcf0d91] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 100.0%
+  INFO [cb7716ce] Running /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh as pilmngr@172.17.26.9
+ DEBUG [cb7716ce] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh
+  INFO [cb7716ce] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [595dba8f] Running /usr/bin/env git ls-remote git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git HEAD as pilmngr@172.17.26.9
+ DEBUG [595dba8f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git HEAD )
+ DEBUG [595dba8f] 	3db33f74279648dc0f687091fe6291a0619695b1	HEAD
+  INFO [595dba8f] Finished in 0.399 seconds with exit status 0 (successful).
+  INFO [9bad7868] Running /usr/bin/env mkdir -p ~/deploy/cirmar/shared ~/deploy/cirmar/releases as pilmngr@172.17.26.9
+ DEBUG [9bad7868] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/shared ~/deploy/cirmar/releases
+  INFO [9bad7868] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [26dfa0c6] Running /usr/bin/env mkdir -p ~/deploy/cirmar/shared/public/assets as pilmngr@172.17.26.9
+ DEBUG [26dfa0c6] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/shared/public/assets
+  INFO [26dfa0c6] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [5640c33f] Running [ -f ~/deploy/cirmar/current/REVISION ] as pilmngr@172.17.26.9
+ DEBUG [5640c33f] Command: [ -f ~/deploy/cirmar/current/REVISION ]
+ DEBUG [5640c33f] Finished in 0.010 seconds with exit status 1 (failed).
+ DEBUG [68d037fa] Running [ -f ~/deploy/cirmar/repo/HEAD ] as pilmngr@172.17.26.9
+ DEBUG [68d037fa] Command: [ -f ~/deploy/cirmar/repo/HEAD ]
+ DEBUG [68d037fa] Finished in 0.009 seconds with exit status 1 (failed).
+ DEBUG [4357c17d] Running if test ! -d ~/deploy/cirmar; then echo "Directory does not exist '~/deploy/cirmar'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [4357c17d] Command: if test ! -d ~/deploy/cirmar; then echo "Directory does not exist '~/deploy/cirmar'" 1>&2; false; fi
+ DEBUG [4357c17d] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [6aed9a81] Running /usr/bin/env git clone --mirror git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git ~/deploy/cirmar/repo as pilmngr@172.17.26.9
+ DEBUG [6aed9a81] Command: cd ~/deploy/cirmar && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git clone --mirror git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git ~/deploy/cirmar/repo )
+ DEBUG [6aed9a81] 	Cloning into bare repository '/home/pilmngr/deploy/cirmar/repo'...
+  INFO [6aed9a81] Finished in 1.258 seconds with exit status 0 (successful).
+ DEBUG [d59fae93] Running if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [d59fae93] Command: if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi
+ DEBUG [d59fae93] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [808665b5] Running /usr/bin/env git remote set-url origin git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git as pilmngr@172.17.26.9
+ DEBUG [808665b5] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git remote set-url origin git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git )
+  INFO [808665b5] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [e3b490c0] Running /usr/bin/env git remote update --prune as pilmngr@172.17.26.9
+ DEBUG [e3b490c0] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [e3b490c0] 	Fetching origin
+  INFO [e3b490c0] Finished in 0.374 seconds with exit status 0 (successful).
+ DEBUG [8f1c2b12] Running if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [8f1c2b12] Command: if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi
+ DEBUG [8f1c2b12] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [697d0488] Running /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602132056 as pilmngr@172.17.26.9
+ DEBUG [697d0488] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602132056 )
+  INFO [697d0488] Finished in 0.015 seconds with exit status 0 (successful).
+  INFO [6c91d542] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C ~/deploy/cirmar/releases/20170602132056 as pilmngr@172.17.26.9
+ DEBUG [6c91d542] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C ~/deploy/cirmar/releases/20170602132056 )
+ DEBUG [6c91d542] 	warning: unable to access '/home/pilmngr/.config/git/attributes': Permission denied
+  INFO [6c91d542] Finished in 0.416 seconds with exit status 0 (successful).
+ DEBUG [f66605da] Running if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [f66605da] Command: if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi
+ DEBUG [f66605da] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [0368b29d] Running /usr/bin/env git rev-list --max-count=1 master as pilmngr@172.17.26.9
+ DEBUG [0368b29d] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [0368b29d] 	3db33f74279648dc0f687091fe6291a0619695b1
+ DEBUG [0368b29d] Finished in 0.015 seconds with exit status 0 (successful).
+ DEBUG [d9e53c86] Running if test ! -d ~/deploy/cirmar/releases/20170602132056; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602132056'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [d9e53c86] Command: if test ! -d ~/deploy/cirmar/releases/20170602132056; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602132056'" 1>&2; false; fi
+ DEBUG [d9e53c86] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [d97c0e2e] Running /usr/bin/env echo "3db33f74279648dc0f687091fe6291a0619695b1" >> REVISION as pilmngr@172.17.26.9
+ DEBUG [d97c0e2e] Command: cd ~/deploy/cirmar/releases/20170602132056 && /usr/bin/env echo "3db33f74279648dc0f687091fe6291a0619695b1" >> REVISION
+  INFO [d97c0e2e] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [1e0ec46d] Running /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602132056/public as pilmngr@172.17.26.9
+ DEBUG [1e0ec46d] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602132056/public
+  INFO [1e0ec46d] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [3a945b60] Running [ -L ~/deploy/cirmar/releases/20170602132056/public/assets ] as pilmngr@172.17.26.9
+ DEBUG [3a945b60] Command: [ -L ~/deploy/cirmar/releases/20170602132056/public/assets ]
+ DEBUG [3a945b60] Finished in 0.008 seconds with exit status 1 (failed).
+ DEBUG [84d2b534] Running [ -d ~/deploy/cirmar/releases/20170602132056/public/assets ] as pilmngr@172.17.26.9
+ DEBUG [84d2b534] Command: [ -d ~/deploy/cirmar/releases/20170602132056/public/assets ]
+ DEBUG [84d2b534] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [f2783ac0] Running /usr/bin/env rm -rf ~/deploy/cirmar/releases/20170602132056/public/assets as pilmngr@172.17.26.9
+ DEBUG [f2783ac0] Command: /usr/bin/env rm -rf ~/deploy/cirmar/releases/20170602132056/public/assets
+  INFO [f2783ac0] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [922f5e3f] Running /usr/bin/env ln -s ~/deploy/cirmar/shared/public/assets ~/deploy/cirmar/releases/20170602132056/public/assets as pilmngr@172.17.26.9
+ DEBUG [922f5e3f] Command: /usr/bin/env ln -s ~/deploy/cirmar/shared/public/assets ~/deploy/cirmar/releases/20170602132056/public/assets
+  INFO [922f5e3f] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [8fbb63a2] Running if test ! -d ~/deploy/cirmar/releases/20170602132056; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602132056'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [8fbb63a2] Command: if test ! -d ~/deploy/cirmar/releases/20170602132056; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602132056'" 1>&2; false; fi
+ DEBUG [8fbb63a2] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [74b35ebb] Running ~/.rvm/bin/rvm default do bundle check --path ~/deploy/cirmar/shared/bundle as pilmngr@172.17.26.9
+ DEBUG [74b35ebb] Command: cd ~/deploy/cirmar/releases/20170602132056 && ~/.rvm/bin/rvm default do bundle check --path ~/deploy/cirmar/shared/bundle
+ DEBUG [74b35ebb] 	The following gems are missing
+ * rake (12.0.0)
+ * concurrent-ruby (1.0.5)
+ * i18n (0.8.1)
+ * minitest (5.10.1)
+ * thread_safe (0.3.6)
+ * tzinfo (1.2.3)
+ * activesupport (5.0.1)
+ * builder (3.2.3)
+ * erubis (2.7.0)
+ * mini_portile2 (2.1.0)
+ * nokogiri (1.7.1)
+ * rails-dom-testing (2.0.2)
+ DEBUG [74b35ebb] 	 * loofah (2.0.3)
+ * rails-html-sanitizer (1.0.3)
+ * actionview (5.0.1)
+ * rack (2.0.1)
+ * rack-test (0.6.3)
+ * actionpack (5.0.1)
+ * nio4r (1.2.1)
+ DEBUG [74b35ebb] 	 * websocket-extensions (0.1.2)
+ * websocket-driver (0.6.5)
+ * actioncable (5.0.1)
+ * globalid (0.3.7)
+ * activejob (5.0.1)
+ * mime-types-data (3.2016.0521)
+ * mime-types (3.1)
+ * mail (2.6.4)
+ DEBUG [74b35ebb] 	 * actionmailer (5.0.1)
+ * activemodel (5.0.1)
+ * arel (7.1.4)
+ DEBUG [74b35ebb] 	 * activerecord (5.0.1)
+ * method_source (0.8.2)
+ * thor (0.19.4)
+ DEBUG [74b35ebb] 	 * railties (5.0.1)
+ * sprockets (3.7.1)
+ DEBUG [74b35ebb] 	 * sprockets-rails (3.2.0)
+ * rails (5.0.1)
+ * bson (4.2.1)
+ DEBUG [74b35ebb] 	 * mongo (2.4.1)
+ * mongoid (6.1.0)
+ * bson_ext (1.5.1)
+ DEBUG [74b35ebb] 	 * sass (3.4.23)
+ * tilt (2.0.7)
+ * sass-rails (5.0.6)
+ * execjs (2.7.0)
+ * uglifier (3.1.13)
+ DEBUG [74b35ebb] 	 * coffee-script-source (1.12.2)
+ * coffee-script (2.4.1)
+ * coffee-rails (4.2.1)
+ DEBUG [74b35ebb] 	 * jquery-rails (4.3.1)
+ * turbolinks-source (5.0.0)
+ * turbolinks (5.0.1)
+ * multi_json (1.12.1)
+ DEBUG [74b35ebb] 	 * jbuilder (2.6.3)
+ * json (1.8.6)
+ * rdoc (4.3.0)
+ DEBUG [74b35ebb] 	 * sdoc (0.4.2)
+ * byebug (9.0.6)
+ DEBUG [74b35ebb] 	 * debug_inspector (0.0.2)
+ * binding_of_caller (0.7.2)
+ DEBUG [74b35ebb] 	 * web-console (2.3.0)
+ DEBUG [74b35ebb] 	 * spring (2.0.1)
+ * net-ssh (4.1.0)
+ DEBUG [74b35ebb] 	 * net-scp (1.2.1)
+ DEBUG [74b35ebb] 	 * sshkit (1.13.1)
+ * airbrussh (1.2.0)
+ DEBUG [74b35ebb] 	 * capistrano (3.8.1)
+ * capistrano-bundler (1.2.0)
+ DEBUG [74b35ebb] 	 * capistrano-rails (1.2.3)
+ DEBUG [74b35ebb] 	 * capistrano-rvm (0.1.2)
+ * bcrypt (3.1.11)
+ DEBUG [74b35ebb] 	 * orm_adapter (0.5.0)
+ * responders (2.3.0)
+ DEBUG [74b35ebb] 	 * warden (1.2.7)
+ DEBUG [74b35ebb] 	 * devise (4.2.1)
+ * kaminari-core (1.0.1)
+ DEBUG [74b35ebb] 	 * kaminari-actionview (1.0.1)
+ DEBUG [74b35ebb] 	 * kaminari-activerecord (1.0.1)
+ * kaminari (1.0.1)
+ DEBUG [74b35ebb] 	 * rails_serve_static_assets (0.0.5)
+ DEBUG [74b35ebb] 	 * rails_stdout_logging (0.0.5)
+ * rails_12factor (0.0.3)
+Install missing gems with `bundle install`
+ DEBUG [74b35ebb] Finished in 0.762 seconds with exit status 1 (failed).
+  INFO [51f558c6] Running ~/.rvm/bin/rvm default do bundle install --path ~/deploy/cirmar/shared/bundle --without development test --deployment --quiet as pilmngr@172.17.26.9
+ DEBUG [51f558c6] Command: cd ~/deploy/cirmar/releases/20170602132056 && ~/.rvm/bin/rvm default do bundle install --path ~/deploy/cirmar/shared/bundle --without development test --deployment --quiet
+  INFO [51f558c6] Finished in 108.481 seconds with exit status 0 (successful).
+ DEBUG [c92ce0b0] Running if test ! -d ~/deploy/cirmar/releases/20170602132056; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602132056'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [c92ce0b0] Command: if test ! -d ~/deploy/cirmar/releases/20170602132056; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602132056'" 1>&2; false; fi
+ DEBUG [c92ce0b0] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [336fb963] Running ~/.rvm/bin/rvm default do bundle exec rake assets:precompile as pilmngr@172.17.26.9
+ DEBUG [336fb963] Command: cd ~/deploy/cirmar/releases/20170602132056 && ( export RAILS_ENV="production" ; ~/.rvm/bin/rvm default do bundle exec rake assets:precompile )
+ DEBUG [336fb963] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:51: warning: constant ::Fixnum is deprecated
+/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:52: warning: constant ::Bignum is deprecated
+ DEBUG [336fb963] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/core_ext/numeric/conversions.rb:138: warning: constant ::Fixnum is deprecated
+ DEBUG [336fb963] 	DEPRECATION WARNING: `config.serve_static_files` is deprecated and will be removed in Rails 5.1.
+Please use `config.public_file_server.enabled = false` instead.
+ (called from block in <top (required)> at /home/pilmngr/deploy/cirmar/releases/20170602132056/config/environments/production.rb:25)
+ DEBUG [336fb963] 	Overwriting existing field email in class User.
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.361576 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/about/1-1f933fe896090a71940395cb1e2aee34fc861d3121ced2904943d575f46d7bda.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.365051 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/about/2-68c9fe6c4b846d6a591117f071d063fccde5b40d647ec0642ba2eaa843202443.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.367535 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/about/3-109f34460213c7a6f7d3bec2e8e32e16d0258f8e94a54e0e651023dd744b425f.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.370091 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/about/4-be114343e6bb5dd2bf254fd9f956b6d6b90459ac39e3e175ce9599cc40865fa0.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.374700 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/header-bg (copy)-bf7c7f16555c34831aac33a2184fb0abfebca560635964ac3546922feb0ab1b7.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.378129 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/header-bg-cb744149ada5e8293e5d0d3d2795dcd51e8d21dd01c0e85857bec53bb15da8c1.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.381506 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/header-bg1-d7e00f6de9a8e90d3bb7482018ee37270869d1cc983063bfa3a9f7ef3f57c1ff.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.384538 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/header-bg2-95e20148270ed79ab27b130ba1743f8becf69388d25ae19db24e337657488b59.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.388106 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/header-bg3-faa95386d80822e4aecd683445c3200896193ec79b49daf6b4a491c9e9a99611.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.391329 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/header-bg4-9897e4d2ab717fceaad3ae48e8f2bfdf0d97f9691fe045d1d04372e2c4c5cb0d.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.393887 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/header-bg5-707e5a7a3d80bfce2e3b8801b28b5ad7a37cf3eb656f24d59bc8db5c671effe7.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.396349 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/logos/aetuts-fa6fd5f509271afbb4330537808c09c3fa76d1fd8208549cc13ac788b89effd4.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.398308 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/logos/creative-market-003203f6ef93fff338ef0ec5100d2c398794bf887317a4786be610d9428b6e11.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.400792 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/logos/designmodo-b707f6d4078674978a5681e2cf126ba96174e233e578ef4d41025f9b9ceafb75.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.403111 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/logos/envato-6c787a84359750d64158623d117a1810ef1dda2f6769657e3aeabf640355de87.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.405364 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/logos/microlancer-1466c4c0a87543d89457dd2de74d2fcc95e992f6df1cc57c32f1456bd4267b55.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.407636 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/logos/themeforest-9de07d78114884271a41255de36e3c16f946519aa392f4ab8a01824fb672a73b.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.410032 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/logos/wordpress-957f178ee0693cf1b5fe358ce63f266b2c57dab525e88db8460c3dedacc33951.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.413479 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/map-image-ac8a5781cfbd97db15820eef8e6f9e41d80930d1d91f383bba1f17c8c57a6b88.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.416440 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/dreams-preview-cd87f9ba6c742c799885f5b616905670907556e6cf8657415a3687180c8512ce.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.418932 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/dreams-693a8bcfbbeab9d216137729e0f4290bb2e0c09722a3030fd58406fac2194e64.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.421726 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/escape-preview-f1ef5184376fc5b752dbaa9aaabc56f7ffe1df3b477c6d8443071cb4b029cc08.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.424368 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/escape-1f86c4cb89e1e2670a1398ff6c81106559ff88ea3610098625133c450f08c66f.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.427030 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/golden-preview-4b5020c75a16db9e9e2a8493a7047b8db6739baafebc5ad1bdd22fc5af2b1e6e.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.429653 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/golden-b03ef9247bfcc94ecb7ca13b39b68faf0d0a52cac5f6624d45e5270ffe49adf5.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.432655 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/roundicons-free-9516b1511f14d20e7194240fa53a86bb249bfdc1d7e41745b49d9cb3e482111b.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.435279 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/roundicons-24db9c96170c2ee661b011bde1648664b9bd6fee5187f15878ad39af0571a633.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.438344 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/startup-framework-preview-2fee87b2c7b09695095e2daa1c7d6dc6f5e158175417bb829c0415e6feb00259.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.441508 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/startup-framework-753c53fb51ebb1102f0f2fe56fe340747b0ebc32dd09e7421741123898883c1a.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.444412 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/treehouse-preview-b0ea1440582403d12200b6433f3c26bf5c90c6a25eeb8d5409c2930840ad21bb.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.446988 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/portfolio/treehouse-f6562c86c83a2dd47d68ba9979296a8fe4ca601860cca970a6b8c2923f923658.png
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.449392 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/team/1-c69651c82e8a4fbe736ac2d902b12a276ab15670d41007ae3b59e6cf247b83bd.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.451786 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/team/2-08af23771c4618a6b731163acc615024fba4154920b83d53c9aa024979888613.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:50.453919 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/team/3-7583dfc7a0dc732a4759a22a052250f7049ef998ec90da1396fd78a58449555b.jpg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.572915 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/application-0b7e9e3d73568a01cd6bcf4bead41614e7f10f74c6d27da8d6a9c3c85c45e980.js
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.573902 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/application-0b7e9e3d73568a01cd6bcf4bead41614e7f10f74c6d27da8d6a9c3c85c45e980.js.gz
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.580435 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/agency-13d65f6d2a48d4a4387f4ae89a916d9db3dfcaab722738e9d2d44a25235289e8.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.583778 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/mixins-3b7b55bb7aaf1a2464b419020553ab537ac189df7235815a32b0acb5b56808fa.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.587057 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/variables-842a924ece9d6652cba2bbaf0291628dfab2eb0373588fb91789768549c869ca.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.863027 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/application-da6401082128ca73b6e6a4bd61efe2c85f34aff3e383057bff1ca30605a40850.css
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.863232 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/application-da6401082128ca73b6e6a4bd61efe2c85f34aff3e383057bff1ca30605a40850.css.gz
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.868106 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/bootstrap/fonts/glyphicons-halflings-regular-13634da87d9e23f8c3ed9108ce1724d183a39ad072e73e1b3d8cbf646d2d0407.eot
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.869022 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/bootstrap/fonts/glyphicons-halflings-regular-13634da87d9e23f8c3ed9108ce1724d183a39ad072e73e1b3d8cbf646d2d0407.eot.gz
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.872666 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/bootstrap/fonts/glyphicons-halflings-regular-42f60659d265c1a3c30f9fa42abcbb56bd4a53af4d83d316d6dd7a36903c43e5.svg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.873290 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/bootstrap/fonts/glyphicons-halflings-regular-42f60659d265c1a3c30f9fa42abcbb56bd4a53af4d83d316d6dd7a36903c43e5.svg.gz
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.879917 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/bootstrap/fonts/glyphicons-halflings-regular-e395044093757d82afcb138957d06a1ea9361bdcf0b442d06a18a8051af57456.ttf
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.880903 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/bootstrap/fonts/glyphicons-halflings-regular-e395044093757d82afcb138957d06a1ea9361bdcf0b442d06a18a8051af57456.ttf.gz
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.887294 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/bootstrap/fonts/glyphicons-halflings-regular-a26394f7ede100ca118eff2eda08596275a9839b959c226e15439557a5a80742.woff
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.898615 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/bootstrap/fonts/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.906138 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/fonts/FontAwesome-ecd72f31910a8ee2726fd17bd459be26f230779f3f3ed5f69ebf829e4b12e768.otf
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.907017 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/fonts/FontAwesome-ecd72f31910a8ee2726fd17bd459be26f230779f3f3ed5f69ebf829e4b12e768.otf.gz
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.912720 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/fonts/fontawesome-webfont-50bbe9192697e791e2ee4ef73917aeb1b03e727dff08a1fc8d74f00e4aa812e1.eot
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.913195 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/fonts/fontawesome-webfont-50bbe9192697e791e2ee4ef73917aeb1b03e727dff08a1fc8d74f00e4aa812e1.eot.gz
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.920660 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/fonts/fontawesome-webfont-8e3586389bb4cd01b3f85bb3b622739bde6627f28bba63a020c223ca9cf1b9ae.svg
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.921630 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/fonts/fontawesome-webfont-8e3586389bb4cd01b3f85bb3b622739bde6627f28bba63a020c223ca9cf1b9ae.svg.gz
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.927375 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/fonts/fontawesome-webfont-ae19e2e4c04f2b04bf030684c4c1db8faf5c8fe3ee03d1e0c409046608b38912.ttf
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.927864 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/fonts/fontawesome-webfont-ae19e2e4c04f2b04bf030684c4c1db8faf5c8fe3ee03d1e0c409046608b38912.ttf.gz
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.933184 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/fonts/fontawesome-webfont-adbc4f95eb6d7f2738959cf0ecbc374672fce47e856050a8e9791f457623ac2c.woff
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.937673 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/fonts/fontawesome-webfont-7dacf83f51179de8d7980a513e67ab3a08f2c6272bb5946df8fd77c0d1763b73.woff2
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.942364 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/animated-c7035423d5a1e03d36bcfd6465481e4c4d5c91f316fa878a6e5103afe1b0bbf6.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.945849 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/bordered-pulled-e3d168a292ba33d4e3215919963a304dc25732a73cebdde6e7ebe4d47ab43eb6.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.949858 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/core-a4a93d598134f656ac6c7a0a5f375afa941e71e348e68ecf3cd6feb7616acf9e.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.959252 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/fixed-width-0ef853a3192742d207ea0e793dc8bcc6322dcb9e50d41f4b981c4ebac2dac7ac.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.963057 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/font-awesome-a5152daf06b59aff5cbc947f30f13087a92d7b67cfaf482c8ca13b9ca2ab2412.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.966627 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/icons-25a2b29555d5209386d51c9f89dfbe63086ddbb2b22a339c1938449d13667895.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.970290 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/larger-dfc79d4325804e9ade21ab65145b23b1c4193d24a893690bc47b5c0739ca3c0a.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.973548 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/list-024abb930e6669f215ddee19f58077571f1cabb7aee1274bf96b226c296b73d3.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.977284 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/mixins-65c4bb7138772043fafd2167b74c0fd7ac15e57ba7877adecde4b0992950670c.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.981373 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/path-a0dcbbcd3976f59116268c109767c3b98fe358872f6e9fc1a0d26a337d272b8f.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.985245 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/rotated-flipped-d67df95488eec84d2d0caf79727825a8ff4b2df90c604151783e3ec2388dad38.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.989088 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/screen-reader-b32ff7821a7b0a649f9202a02eeb8ce88fe671eb52d61ece50aabdbce21110c6.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.992576 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/stacked-3f9de6c3e0f1a2bc71579a417d7c415f82f2a3d3f4792161a8588bb8bdd75450.less
+ DEBUG [336fb963] 	I, [2017-06-02T15:22:53.996408 #15831]  INFO -- : Writing /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/font-awesome/less/variables-527983e88c8c699aef0a378c04dc71295cb7653e9a39ea02c4917fb2a2c36669.less
+  INFO [336fb963] Finished in 6.169 seconds with exit status 0 (successful).
+ DEBUG [5d4694bb] Running if test ! -d ~/deploy/cirmar/releases/20170602132056; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602132056'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [5d4694bb] Command: if test ! -d ~/deploy/cirmar/releases/20170602132056; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602132056'" 1>&2; false; fi
+ DEBUG [5d4694bb] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [6ed58c33] Running /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602132056/assets_manifest_backup as pilmngr@172.17.26.9
+ DEBUG [6ed58c33] Command: cd ~/deploy/cirmar/releases/20170602132056 && /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602132056/assets_manifest_backup
+  INFO [6ed58c33] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [0d7bbd50] Running /usr/bin/env ls ~/deploy/cirmar/releases/20170602132056/public/assets/.sprockets-manifest* as pilmngr@172.17.26.9
+ DEBUG [0d7bbd50] Command: cd ~/deploy/cirmar/releases/20170602132056 && /usr/bin/env ls ~/deploy/cirmar/releases/20170602132056/public/assets/.sprockets-manifest*
+ DEBUG [0d7bbd50] 	/home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json
+ DEBUG [0d7bbd50] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [bc4fe171] Running /usr/bin/env ls ~/deploy/cirmar/releases/20170602132056/public/assets/.sprockets-manifest* as pilmngr@172.17.26.9
+ DEBUG [bc4fe171] Command: cd ~/deploy/cirmar/releases/20170602132056 && /usr/bin/env ls ~/deploy/cirmar/releases/20170602132056/public/assets/.sprockets-manifest*
+ DEBUG [bc4fe171] 	/home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json
+ DEBUG [bc4fe171] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [7fa9543f] Running /usr/bin/env cp /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json ~/deploy/cirmar/releases/20170602132056/assets_manifest_backup as pilmngr@172.17.26.9
+ DEBUG [7fa9543f] Command: cd ~/deploy/cirmar/releases/20170602132056 && /usr/bin/env cp /home/pilmngr/deploy/cirmar/releases/20170602132056/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json ~/deploy/cirmar/releases/20170602132056/assets_manifest_backup
+  INFO [7fa9543f] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [ae986474] Running if test ! -d ~/deploy/cirmar/releases/20170602132056; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602132056'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [ae986474] Command: if test ! -d ~/deploy/cirmar/releases/20170602132056; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602132056'" 1>&2; false; fi
+ DEBUG [ae986474] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [3c5e0b3d] Running ~/.rvm/bin/rvm default do bundle exec rake db:migrate as pilmngr@172.17.26.9
+ DEBUG [3c5e0b3d] Command: cd ~/deploy/cirmar/releases/20170602132056 && ( export RAILS_ENV="production" ; ~/.rvm/bin/rvm default do bundle exec rake db:migrate )
+ DEBUG [3c5e0b3d] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:51: warning: constant ::Fixnum is deprecated
+ DEBUG [3c5e0b3d] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:52: warning: constant ::Bignum is deprecated
+ DEBUG [3c5e0b3d] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/core_ext/numeric/conversions.rb:138: warning: constant ::Fixnum is deprecated
+ DEBUG [3c5e0b3d] 	DEPRECATION WARNING: `config.serve_static_files` is deprecated and will be removed in Rails 5.1.
+Please use `config.public_file_server.enabled = false` instead.
+ (called from block in <top (required)> at /home/pilmngr/deploy/cirmar/releases/20170602132056/config/environments/production.rb:25)
+ DEBUG [3c5e0b3d] 	
+ DEBUG [3c5e0b3d] 	Overwriting existing field email in class User.
+  INFO [3c5e0b3d] Finished in 1.866 seconds with exit status 0 (successful).
+  INFO [6f1eef34] Running /usr/bin/env ln -s ~/deploy/cirmar/releases/20170602132056 ~/deploy/cirmar/releases/current as pilmngr@172.17.26.9
+ DEBUG [6f1eef34] Command: /usr/bin/env ln -s ~/deploy/cirmar/releases/20170602132056 ~/deploy/cirmar/releases/current
+  INFO [6f1eef34] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [1f919bcc] Running /usr/bin/env mv ~/deploy/cirmar/releases/current ~/deploy/cirmar as pilmngr@172.17.26.9
+ DEBUG [1f919bcc] Command: /usr/bin/env mv ~/deploy/cirmar/releases/current ~/deploy/cirmar
+  INFO [1f919bcc] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [67424d2f] Running /usr/bin/env ls -x ~/deploy/cirmar/releases as pilmngr@172.17.26.9
+ DEBUG [67424d2f] Command: /usr/bin/env ls -x ~/deploy/cirmar/releases
+ DEBUG [67424d2f] 	20170602132056
+ DEBUG [67424d2f] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [71c47cdd] Running if test ! -d ~/deploy/cirmar/releases; then echo "Directory does not exist '~/deploy/cirmar/releases'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [71c47cdd] Command: if test ! -d ~/deploy/cirmar/releases; then echo "Directory does not exist '~/deploy/cirmar/releases'" 1>&2; false; fi
+ DEBUG [71c47cdd] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [0a6d0125] Running /usr/bin/env echo "Branch master (at 3db33f74279648dc0f687091fe6291a0619695b1) deployed as release 20170602132056 by aboozar" >> ~/deploy/cirmar/revisions.log as pilmngr@172.17.26.9
+ DEBUG [0a6d0125] Command: cd ~/deploy/cirmar/releases && /usr/bin/env echo "Branch master (at 3db33f74279648dc0f687091fe6291a0619695b1) deployed as release 20170602132056 by aboozar" >> ~/deploy/cirmar/revisions.log
+  INFO [0a6d0125] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-02 15:31:03 +0200 cap production deploy:restart
+  INFO ---------------------------------------------------------------------------
+ DEBUG [ed265756] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [ed265756] Command: [ -d ~/.rvm ]
+ DEBUG [ed265756] Finished in 6.913 seconds with exit status 0 (successful).
+ DEBUG [6349f667] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [6349f667] Command: ~/.rvm/bin/rvm version
+ DEBUG [6349f667] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [6349f667] Finished in 0.301 seconds with exit status 0 (successful).
+ DEBUG [6154c4e4] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [6154c4e4] Command: ~/.rvm/bin/rvm current
+ DEBUG [6154c4e4] 	ruby-2.4.0
+ DEBUG [6154c4e4] Finished in 0.304 seconds with exit status 0 (successful).
+ DEBUG [dc73854b] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [dc73854b] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [dc73854b] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [dc73854b] Finished in 0.505 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-02 15:44:28 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [aff9938f] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [aff9938f] Command: [ -d ~/.rvm ]
+ DEBUG [aff9938f] Finished in 5.841 seconds with exit status 0 (successful).
+ DEBUG [85d0649b] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [85d0649b] Command: ~/.rvm/bin/rvm version
+ DEBUG [85d0649b] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [85d0649b] Finished in 0.298 seconds with exit status 0 (successful).
+ DEBUG [cc85cb1c] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [cc85cb1c] Command: ~/.rvm/bin/rvm current
+ DEBUG [cc85cb1c] 	ruby-2.4.0
+ DEBUG [cc85cb1c] Finished in 0.298 seconds with exit status 0 (successful).
+ DEBUG [6dd7698a] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [6dd7698a] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [6dd7698a] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [6dd7698a] Finished in 0.482 seconds with exit status 0 (successful).
+  INFO [f01a50b8] Running /usr/bin/env mkdir -p /tmp as pilmngr@172.17.26.9
+ DEBUG [f01a50b8] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f01a50b8] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 100.0%
+  INFO [b05ef087] Running /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh as pilmngr@172.17.26.9
+ DEBUG [b05ef087] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh
+  INFO [b05ef087] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [01a0767b] Running /usr/bin/env git ls-remote git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git HEAD as pilmngr@172.17.26.9
+ DEBUG [01a0767b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git HEAD )
+ DEBUG [01a0767b] 	3db33f74279648dc0f687091fe6291a0619695b1	HEAD
+  INFO [01a0767b] Finished in 0.470 seconds with exit status 0 (successful).
+  INFO [e20e9198] Running /usr/bin/env mkdir -p ~/deploy/cirmar/shared ~/deploy/cirmar/releases as pilmngr@172.17.26.9
+ DEBUG [e20e9198] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/shared ~/deploy/cirmar/releases
+  INFO [e20e9198] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [d6392cba] Running /usr/bin/env mkdir -p ~/deploy/cirmar/shared/public/assets as pilmngr@172.17.26.9
+ DEBUG [d6392cba] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/shared/public/assets
+  INFO [d6392cba] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [cd5b5e94] Running [ -f ~/deploy/cirmar/current/REVISION ] as pilmngr@172.17.26.9
+ DEBUG [cd5b5e94] Command: [ -f ~/deploy/cirmar/current/REVISION ]
+ DEBUG [cd5b5e94] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [8d1ae9ee] Running /usr/bin/env cat ~/deploy/cirmar/current/REVISION 2>/dev/null as pilmngr@172.17.26.9
+ DEBUG [8d1ae9ee] Command: /usr/bin/env cat ~/deploy/cirmar/current/REVISION 2>/dev/null
+ DEBUG [8d1ae9ee] 	3db33f74279648dc0f687091fe6291a0619695b1
+ DEBUG [8d1ae9ee] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [d870b93a] Running [ -f ~/deploy/cirmar/repo/HEAD ] as pilmngr@172.17.26.9
+ DEBUG [d870b93a] Command: [ -f ~/deploy/cirmar/repo/HEAD ]
+ DEBUG [d870b93a] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO The repository mirror is at ~/deploy/cirmar/repo
+ DEBUG [23e73eb1] Running if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [23e73eb1] Command: if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi
+ DEBUG [23e73eb1] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [ce6d43c0] Running /usr/bin/env git remote set-url origin git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git as pilmngr@172.17.26.9
+ DEBUG [ce6d43c0] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git remote set-url origin git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git )
+  INFO [ce6d43c0] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [32351158] Running /usr/bin/env git remote update --prune as pilmngr@172.17.26.9
+ DEBUG [32351158] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [32351158] 	Fetching origin
+  INFO [32351158] Finished in 0.480 seconds with exit status 0 (successful).
+ DEBUG [2e20e4ab] Running if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [2e20e4ab] Command: if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi
+ DEBUG [2e20e4ab] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [ce06d5ae] Running /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602134436 as pilmngr@172.17.26.9
+ DEBUG [ce06d5ae] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602134436 )
+  INFO [ce06d5ae] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [dc3511a0] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C ~/deploy/cirmar/releases/20170602134436 as pilmngr@172.17.26.9
+ DEBUG [dc3511a0] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C ~/deploy/cirmar/releases/20170602134436 )
+ DEBUG [dc3511a0] 	warning: unable to access '/home/pilmngr/.config/git/attributes': Permission denied
+  INFO [dc3511a0] Finished in 0.335 seconds with exit status 0 (successful).
+ DEBUG [9c94dfe2] Running if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [9c94dfe2] Command: if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi
+ DEBUG [9c94dfe2] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [a8596404] Running /usr/bin/env git rev-list --max-count=1 master as pilmngr@172.17.26.9
+ DEBUG [a8596404] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [a8596404] 	3db33f74279648dc0f687091fe6291a0619695b1
+ DEBUG [a8596404] Finished in 0.016 seconds with exit status 0 (successful).
+ DEBUG [5a90f795] Running if test ! -d ~/deploy/cirmar/releases/20170602134436; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602134436'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [5a90f795] Command: if test ! -d ~/deploy/cirmar/releases/20170602134436; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602134436'" 1>&2; false; fi
+ DEBUG [5a90f795] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [c60dfda4] Running /usr/bin/env echo "3db33f74279648dc0f687091fe6291a0619695b1" >> REVISION as pilmngr@172.17.26.9
+ DEBUG [c60dfda4] Command: cd ~/deploy/cirmar/releases/20170602134436 && /usr/bin/env echo "3db33f74279648dc0f687091fe6291a0619695b1" >> REVISION
+  INFO [c60dfda4] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [e0b60148] Running /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602134436/public as pilmngr@172.17.26.9
+ DEBUG [e0b60148] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602134436/public
+  INFO [e0b60148] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [c30adf9d] Running [ -L ~/deploy/cirmar/releases/20170602134436/public/assets ] as pilmngr@172.17.26.9
+ DEBUG [c30adf9d] Command: [ -L ~/deploy/cirmar/releases/20170602134436/public/assets ]
+ DEBUG [c30adf9d] Finished in 0.008 seconds with exit status 1 (failed).
+ DEBUG [f5aa0ce2] Running [ -d ~/deploy/cirmar/releases/20170602134436/public/assets ] as pilmngr@172.17.26.9
+ DEBUG [f5aa0ce2] Command: [ -d ~/deploy/cirmar/releases/20170602134436/public/assets ]
+ DEBUG [f5aa0ce2] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [d6a42e54] Running /usr/bin/env rm -rf ~/deploy/cirmar/releases/20170602134436/public/assets as pilmngr@172.17.26.9
+ DEBUG [d6a42e54] Command: /usr/bin/env rm -rf ~/deploy/cirmar/releases/20170602134436/public/assets
+  INFO [d6a42e54] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [0f3c2b77] Running /usr/bin/env ln -s ~/deploy/cirmar/shared/public/assets ~/deploy/cirmar/releases/20170602134436/public/assets as pilmngr@172.17.26.9
+ DEBUG [0f3c2b77] Command: /usr/bin/env ln -s ~/deploy/cirmar/shared/public/assets ~/deploy/cirmar/releases/20170602134436/public/assets
+  INFO [0f3c2b77] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [a7e10817] Running if test ! -d ~/deploy/cirmar/releases/20170602134436; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602134436'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [a7e10817] Command: if test ! -d ~/deploy/cirmar/releases/20170602134436; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602134436'" 1>&2; false; fi
+ DEBUG [a7e10817] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [65d7ea3a] Running ~/.rvm/bin/rvm default do bundle check --path ~/deploy/cirmar/shared/bundle as pilmngr@172.17.26.9
+ DEBUG [65d7ea3a] Command: cd ~/deploy/cirmar/releases/20170602134436 && ~/.rvm/bin/rvm default do bundle check --path ~/deploy/cirmar/shared/bundle
+ DEBUG [65d7ea3a] 	The following gems are missing
+ * byebug (9.0.6)
+ * debug_inspector (0.0.2)
+ * binding_of_caller (0.7.2)
+ * web-console (2.3.0)
+ * spring (2.0.1)
+ * net-ssh (4.1.0)
+ * net-scp (1.2.1)
+ * sshkit (1.13.1)
+ * airbrussh (1.2.0)
+ * capistrano (3.8.1)
+ * capistrano-bundler (1.2.0)
+ * capistrano-rails (1.2.3)
+ * capistrano-rvm (0.1.2)
+Install missing gems with `bundle install`
+ DEBUG [65d7ea3a] 	The latest bundler is 1.15.1, but you are currently running 1.15.0.
+To update, run `gem install bundler`
+ DEBUG [65d7ea3a] Finished in 0.777 seconds with exit status 1 (failed).
+  INFO [137b03d2] Running ~/.rvm/bin/rvm default do bundle install --path ~/deploy/cirmar/shared/bundle --without development test --deployment --quiet as pilmngr@172.17.26.9
+ DEBUG [137b03d2] Command: cd ~/deploy/cirmar/releases/20170602134436 && ~/.rvm/bin/rvm default do bundle install --path ~/deploy/cirmar/shared/bundle --without development test --deployment --quiet
+  INFO [137b03d2] Finished in 6.699 seconds with exit status 0 (successful).
+ DEBUG [7e15ea52] Running if test ! -d ~/deploy/cirmar/releases/20170602134436; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602134436'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [7e15ea52] Command: if test ! -d ~/deploy/cirmar/releases/20170602134436; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602134436'" 1>&2; false; fi
+ DEBUG [7e15ea52] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [497d442b] Running ~/.rvm/bin/rvm default do bundle exec rake assets:precompile as pilmngr@172.17.26.9
+ DEBUG [497d442b] Command: cd ~/deploy/cirmar/releases/20170602134436 && ( export RAILS_ENV="production" ; ~/.rvm/bin/rvm default do bundle exec rake assets:precompile )
+ DEBUG [497d442b] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:51: warning: constant ::Fixnum is deprecated
+/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:52: warning: constant ::Bignum is deprecated
+ DEBUG [497d442b] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/core_ext/numeric/conversions.rb:138: warning: constant ::Fixnum is deprecated
+ DEBUG [497d442b] 	DEPRECATION WARNING: `config.serve_static_files` is deprecated and will be removed in Rails 5.1.
+Please use `config.public_file_server.enabled = false` instead.
+ (called from block in <top (required)> at /home/pilmngr/deploy/cirmar/releases/20170602134436/config/environments/production.rb:25)
+ DEBUG [497d442b] 	Overwriting existing field email in class User.
+  INFO [497d442b] Finished in 5.498 seconds with exit status 0 (successful).
+ DEBUG [bb0fecd1] Running if test ! -d ~/deploy/cirmar/releases/20170602134436; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602134436'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [bb0fecd1] Command: if test ! -d ~/deploy/cirmar/releases/20170602134436; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602134436'" 1>&2; false; fi
+ DEBUG [bb0fecd1] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [75857ac4] Running /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602134436/assets_manifest_backup as pilmngr@172.17.26.9
+ DEBUG [75857ac4] Command: cd ~/deploy/cirmar/releases/20170602134436 && /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170602134436/assets_manifest_backup
+  INFO [75857ac4] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [0feefbd1] Running /usr/bin/env ls ~/deploy/cirmar/releases/20170602134436/public/assets/.sprockets-manifest* as pilmngr@172.17.26.9
+ DEBUG [0feefbd1] Command: cd ~/deploy/cirmar/releases/20170602134436 && /usr/bin/env ls ~/deploy/cirmar/releases/20170602134436/public/assets/.sprockets-manifest*
+ DEBUG [0feefbd1] 	/home/pilmngr/deploy/cirmar/releases/20170602134436/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json
+ DEBUG [0feefbd1] Finished in 0.014 seconds with exit status 0 (successful).
+ DEBUG [fc794d96] Running /usr/bin/env ls ~/deploy/cirmar/releases/20170602134436/public/assets/.sprockets-manifest* as pilmngr@172.17.26.9
+ DEBUG [fc794d96] Command: cd ~/deploy/cirmar/releases/20170602134436 && /usr/bin/env ls ~/deploy/cirmar/releases/20170602134436/public/assets/.sprockets-manifest*
+ DEBUG [fc794d96] 	/home/pilmngr/deploy/cirmar/releases/20170602134436/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json
+ DEBUG [fc794d96] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [a0afd3a5] Running /usr/bin/env cp /home/pilmngr/deploy/cirmar/releases/20170602134436/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json ~/deploy/cirmar/releases/20170602134436/assets_manifest_backup as pilmngr@172.17.26.9
+ DEBUG [a0afd3a5] Command: cd ~/deploy/cirmar/releases/20170602134436 && /usr/bin/env cp /home/pilmngr/deploy/cirmar/releases/20170602134436/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json ~/deploy/cirmar/releases/20170602134436/assets_manifest_backup
+  INFO [a0afd3a5] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [66eaa47b] Running if test ! -d ~/deploy/cirmar/releases/20170602134436; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602134436'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [66eaa47b] Command: if test ! -d ~/deploy/cirmar/releases/20170602134436; then echo "Directory does not exist '~/deploy/cirmar/releases/20170602134436'" 1>&2; false; fi
+ DEBUG [66eaa47b] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [d1b6b2df] Running ~/.rvm/bin/rvm default do bundle exec rake db:migrate as pilmngr@172.17.26.9
+ DEBUG [d1b6b2df] Command: cd ~/deploy/cirmar/releases/20170602134436 && ( export RAILS_ENV="production" ; ~/.rvm/bin/rvm default do bundle exec rake db:migrate )
+ DEBUG [d1b6b2df] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:51: warning: constant ::Fixnum is deprecated
+ DEBUG [d1b6b2df] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:52: warning: constant ::Bignum is deprecated
+ DEBUG [d1b6b2df] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/core_ext/numeric/conversions.rb:138: warning: constant ::Fixnum is deprecated
+ DEBUG [d1b6b2df] 	DEPRECATION WARNING: `config.serve_static_files` is deprecated and will be removed in Rails 5.1.
+Please use `config.public_file_server.enabled = false` instead.
+ (called from block in <top (required)> at /home/pilmngr/deploy/cirmar/releases/20170602134436/config/environments/production.rb:25)
+ DEBUG [d1b6b2df] 	
+ DEBUG [d1b6b2df] 	Overwriting existing field email in class User.
+  INFO [d1b6b2df] Finished in 1.819 seconds with exit status 0 (successful).
+  INFO [24639836] Running /usr/bin/env ln -s ~/deploy/cirmar/releases/20170602134436 ~/deploy/cirmar/releases/current as pilmngr@172.17.26.9
+ DEBUG [24639836] Command: /usr/bin/env ln -s ~/deploy/cirmar/releases/20170602134436 ~/deploy/cirmar/releases/current
+  INFO [24639836] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [14444f95] Running /usr/bin/env mv ~/deploy/cirmar/releases/current ~/deploy/cirmar as pilmngr@172.17.26.9
+ DEBUG [14444f95] Command: /usr/bin/env mv ~/deploy/cirmar/releases/current ~/deploy/cirmar
+  INFO [14444f95] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [e072cf37] Running /usr/bin/env ls -x ~/deploy/cirmar/releases as pilmngr@172.17.26.9
+ DEBUG [e072cf37] Command: /usr/bin/env ls -x ~/deploy/cirmar/releases
+ DEBUG [e072cf37] 	20170602132056	20170602134436
+ DEBUG [e072cf37] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [f486faa5] Running if test ! -d ~/deploy/cirmar/releases; then echo "Directory does not exist '~/deploy/cirmar/releases'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [f486faa5] Command: if test ! -d ~/deploy/cirmar/releases; then echo "Directory does not exist '~/deploy/cirmar/releases'" 1>&2; false; fi
+ DEBUG [f486faa5] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [9f08e8e0] Running /usr/bin/env echo "Branch master (at 3db33f74279648dc0f687091fe6291a0619695b1) deployed as release 20170602134436 by aboozar" >> ~/deploy/cirmar/revisions.log as pilmngr@172.17.26.9
+ DEBUG [9f08e8e0] Command: cd ~/deploy/cirmar/releases && /usr/bin/env echo "Branch master (at 3db33f74279648dc0f687091fe6291a0619695b1) deployed as release 20170602134436 by aboozar" >> ~/deploy/cirmar/revisions.log
+  INFO [9f08e8e0] Finished in 0.008 seconds with exit status 0 (successful).
