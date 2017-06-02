@@ -133,3 +133,37 @@ and the repository exists.
 
 Please make sure you have the correct access rights
 and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-02 14:58:24 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [ea00ec14] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [ea00ec14] Command: [ -d ~/.rvm ]
+ DEBUG [ea00ec14] Finished in 12.585 seconds with exit status 0 (successful).
+ DEBUG [7992d4f7] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [7992d4f7] Command: ~/.rvm/bin/rvm version
+ DEBUG [7992d4f7] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [7992d4f7] Finished in 0.292 seconds with exit status 0 (successful).
+ DEBUG [db2263bc] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [db2263bc] Command: ~/.rvm/bin/rvm current
+ DEBUG [db2263bc] 	ruby-2.4.0
+ DEBUG [db2263bc] Finished in 0.277 seconds with exit status 0 (successful).
+ DEBUG [acec5ee5] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [acec5ee5] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [acec5ee5] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [acec5ee5] Finished in 0.509 seconds with exit status 0 (successful).
+  INFO [277ddaaa] Running /usr/bin/env mkdir -p /tmp as pilmngr@172.17.26.9
+ DEBUG [277ddaaa] Command: /usr/bin/env mkdir -p /tmp
+  INFO [277ddaaa] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 100.0%
+  INFO [5c53d88e] Running /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh as pilmngr@172.17.26.9
+ DEBUG [5c53d88e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh
+  INFO [5c53d88e] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [f6cdd062] Running /usr/bin/env git ls-remote git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git HEAD as pilmngr@172.17.26.9
+ DEBUG [f6cdd062] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git HEAD )
+ DEBUG [f6cdd062] 	Warning: Permanently added 'forgeb1.univ-lehavre.fr,194.254.109.43' (ECDSA) to the list of known hosts.
+ DEBUG [f6cdd062] 	Permission denied (publickey,password).
+ DEBUG [f6cdd062] 	fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
