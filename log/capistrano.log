@@ -254,3 +254,46 @@ and the repository exists.
   INFO [ae555543] Running /usr/bin/env git ls-remote https://rajabia:16051985@forgeb1.univ-lehavre.fr/cirmar-interface HEAD as pilmngr@172.17.26.9
  DEBUG [ae555543] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote https://rajabia:16051985@forgeb1.univ-lehavre.fr/cirmar-interface HEAD )
  DEBUG [ae555543] 	fatal: repository 'https://rajabia:16051985@forgeb1.univ-lehavre.fr/cirmar-interface/' not found
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-02 15:17:44 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [93e019bc] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [93e019bc] Command: [ -d ~/.rvm ]
+ DEBUG [93e019bc] Finished in 7.932 seconds with exit status 0 (successful).
+ DEBUG [8b09f324] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [8b09f324] Command: ~/.rvm/bin/rvm version
+ DEBUG [8b09f324] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [8b09f324] Finished in 0.291 seconds with exit status 0 (successful).
+ DEBUG [402d6e77] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [402d6e77] Command: ~/.rvm/bin/rvm current
+ DEBUG [402d6e77] 	ruby-2.4.0
+ DEBUG [402d6e77] Finished in 0.300 seconds with exit status 0 (successful).
+ DEBUG [26a651ac] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [26a651ac] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [26a651ac] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [26a651ac] Finished in 0.505 seconds with exit status 0 (successful).
+  INFO [9bc65807] Running /usr/bin/env mkdir -p /tmp as pilmngr@172.17.26.9
+ DEBUG [9bc65807] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9bc65807] Finished in 0.013 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 100.0%
+  INFO [e6106ecb] Running /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh as pilmngr@172.17.26.9
+ DEBUG [e6106ecb] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh
+  INFO [e6106ecb] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [24df37ea] Running /usr/bin/env git ls-remote git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git HEAD as pilmngr@172.17.26.9
+ DEBUG [24df37ea] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git HEAD )
+ DEBUG [24df37ea] 	fd7904c4a38e6111a2de52bae864e5c3ddc0b695	HEAD
+  INFO [24df37ea] Finished in 0.512 seconds with exit status 0 (successful).
+  INFO [bd76b713] Running /usr/bin/env mkdir -p ~/deploy/cirmar/shared ~/deploy/cirmar/releases as pilmngr@172.17.26.9
+ DEBUG [bd76b713] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/shared ~/deploy/cirmar/releases
+  INFO [bd76b713] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [dbebd2d2] Running /usr/bin/env mkdir -p ~/deploy/cirmar/shared/log ~/deploy/cirmar/shared/tmp/pids ~/deploy/cirmar/shared/tmp/cache ~/deploy/cirmar/shared/tmp/sockets ~/deploy/cirmar/shared/vendor/bundle ~/deploy/cirmar/shared/public/system ~/deploy/cirmar/shared/public/uploads ~/deploy/cirmar/shared/public/assets as pilmngr@172.17.26.9
+ DEBUG [dbebd2d2] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/shared/log ~/deploy/cirmar/shared/tmp/pids ~/deploy/cirmar/shared/tmp/cache ~/deploy/cirmar/shared/tmp/sockets ~/deploy/cirmar/shared/vendor/bundle ~/deploy/cirmar/shared/public/system ~/deploy/cirmar/shared/public/uploads ~/deploy/cirmar/shared/public/assets
+  INFO [dbebd2d2] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [ffedc7fe] Running /usr/bin/env mkdir -p ~/deploy/cirmar/shared/config as pilmngr@172.17.26.9
+ DEBUG [ffedc7fe] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/shared/config
+  INFO [ffedc7fe] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [66b60ded] Running [ -f ~/deploy/cirmar/shared/config/database.yml ] as pilmngr@172.17.26.9
+ DEBUG [66b60ded] Command: [ -f ~/deploy/cirmar/shared/config/database.yml ]
+ DEBUG [66b60ded] Finished in 0.011 seconds with exit status 1 (failed).
+ ERROR linked file ~/deploy/cirmar/shared/config/database.yml does not exist on 172.17.26.9
