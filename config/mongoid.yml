@@ -163,5 +163,5 @@ production:
 ###       connect_timeout: 15
       database: ais
       hosts:
-        - 172.17.26.9:27017/
+        - localhost:27017
       options:
