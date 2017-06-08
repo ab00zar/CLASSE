@@ -1542,3 +1542,185 @@ To update, run `gem install bundler`
   INFO [911ae437] Running /usr/bin/env echo "Branch master (at af6ff5d77a68d8ffb93e0f5788adfd5a7106d239) deployed as release 20170606125505 by aboozar" >> ~/deploy/cirmar/revisions.log as pilmngr@172.17.26.9
  DEBUG [911ae437] Command: cd ~/deploy/cirmar/releases && /usr/bin/env echo "Branch master (at af6ff5d77a68d8ffb93e0f5788adfd5a7106d239) deployed as release 20170606125505 by aboozar" >> ~/deploy/cirmar/revisions.log
   INFO [911ae437] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-06-06 15:02:31 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [6acb8bfa] Running [ -d ~/.rvm ] as pilmngr@172.17.26.9
+ DEBUG [6acb8bfa] Command: [ -d ~/.rvm ]
+ DEBUG [6acb8bfa] Finished in 5.347 seconds with exit status 0 (successful).
+ DEBUG [d3fdd589] Running ~/.rvm/bin/rvm version as pilmngr@172.17.26.9
+ DEBUG [d3fdd589] Command: ~/.rvm/bin/rvm version
+ DEBUG [d3fdd589] 	rvm 1.29.1 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]
+ DEBUG [d3fdd589] Finished in 0.306 seconds with exit status 0 (successful).
+ DEBUG [37a630b3] Running ~/.rvm/bin/rvm current as pilmngr@172.17.26.9
+ DEBUG [37a630b3] Command: ~/.rvm/bin/rvm current
+ DEBUG [37a630b3] 	ruby-2.4.0
+ DEBUG [37a630b3] Finished in 0.293 seconds with exit status 0 (successful).
+ DEBUG [7f23351b] Running ~/.rvm/bin/rvm default do ruby --version as pilmngr@172.17.26.9
+ DEBUG [7f23351b] Command: ~/.rvm/bin/rvm default do ruby --version
+ DEBUG [7f23351b] 	ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+ DEBUG [7f23351b] Finished in 0.503 seconds with exit status 0 (successful).
+  INFO [6a038949] Running /usr/bin/env mkdir -p /tmp as pilmngr@172.17.26.9
+ DEBUG [6a038949] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6a038949] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 0.0%
+  INFO Uploading /tmp/git-ssh-cirmar-production-aboozar.sh 100.0%
+  INFO [61faccaf] Running /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh as pilmngr@172.17.26.9
+ DEBUG [61faccaf] Command: /usr/bin/env chmod 700 /tmp/git-ssh-cirmar-production-aboozar.sh
+  INFO [61faccaf] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [f8f3e955] Running /usr/bin/env git ls-remote git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git HEAD as pilmngr@172.17.26.9
+ DEBUG [f8f3e955] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git ls-remote git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git HEAD )
+ DEBUG [f8f3e955] 	9119a7bdb0c42bf3ef49b000144fdc84324417c8	HEAD
+  INFO [f8f3e955] Finished in 0.491 seconds with exit status 0 (successful).
+  INFO [a30e75f8] Running /usr/bin/env mkdir -p ~/deploy/cirmar/shared ~/deploy/cirmar/releases as pilmngr@172.17.26.9
+ DEBUG [a30e75f8] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/shared ~/deploy/cirmar/releases
+  INFO [a30e75f8] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [eaf1fdb8] Running /usr/bin/env mkdir -p ~/deploy/cirmar/shared/public/assets as pilmngr@172.17.26.9
+ DEBUG [eaf1fdb8] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/shared/public/assets
+  INFO [eaf1fdb8] Finished in 0.014 seconds with exit status 0 (successful).
+ DEBUG [23f6dec7] Running [ -f ~/deploy/cirmar/current/REVISION ] as pilmngr@172.17.26.9
+ DEBUG [23f6dec7] Command: [ -f ~/deploy/cirmar/current/REVISION ]
+ DEBUG [23f6dec7] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [b9137fc7] Running /usr/bin/env cat ~/deploy/cirmar/current/REVISION 2>/dev/null as pilmngr@172.17.26.9
+ DEBUG [b9137fc7] Command: /usr/bin/env cat ~/deploy/cirmar/current/REVISION 2>/dev/null
+ DEBUG [b9137fc7] 	af6ff5d77a68d8ffb93e0f5788adfd5a7106d239
+ DEBUG [b9137fc7] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [559735f6] Running [ -f ~/deploy/cirmar/repo/HEAD ] as pilmngr@172.17.26.9
+ DEBUG [559735f6] Command: [ -f ~/deploy/cirmar/repo/HEAD ]
+ DEBUG [559735f6] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO The repository mirror is at ~/deploy/cirmar/repo
+ DEBUG [2e6cc6f5] Running if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [2e6cc6f5] Command: if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi
+ DEBUG [2e6cc6f5] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [21f5aa52] Running /usr/bin/env git remote set-url origin git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git as pilmngr@172.17.26.9
+ DEBUG [21f5aa52] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git remote set-url origin git@forgeb1.univ-lehavre.fr:rajabia/cirmar-interface.git )
+  INFO [21f5aa52] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [9c07f356] Running /usr/bin/env git remote update --prune as pilmngr@172.17.26.9
+ DEBUG [9c07f356] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9c07f356] 	Fetching origin
+ DEBUG [9c07f356] 	From forgeb1.univ-lehavre.fr:rajabia/cirmar-interface
+   af6ff5d..9119a7b  master     -> master
+  INFO [9c07f356] Finished in 0.416 seconds with exit status 0 (successful).
+ DEBUG [f2b92002] Running if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [f2b92002] Command: if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi
+ DEBUG [f2b92002] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [5690ea91] Running /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170606130238 as pilmngr@172.17.26.9
+ DEBUG [5690ea91] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170606130238 )
+  INFO [5690ea91] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [f3d8588a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C ~/deploy/cirmar/releases/20170606130238 as pilmngr@172.17.26.9
+ DEBUG [f3d8588a] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C ~/deploy/cirmar/releases/20170606130238 )
+ DEBUG [f3d8588a] 	warning: unable to access '/home/pilmngr/.config/git/attributes': Permission denied
+  INFO [f3d8588a] Finished in 0.258 seconds with exit status 0 (successful).
+ DEBUG [1763b3ae] Running if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [1763b3ae] Command: if test ! -d ~/deploy/cirmar/repo; then echo "Directory does not exist '~/deploy/cirmar/repo'" 1>&2; false; fi
+ DEBUG [1763b3ae] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [d9b16527] Running /usr/bin/env git rev-list --max-count=1 master as pilmngr@172.17.26.9
+ DEBUG [d9b16527] Command: cd ~/deploy/cirmar/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-cirmar-production-aboozar.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [d9b16527] 	9119a7bdb0c42bf3ef49b000144fdc84324417c8
+ DEBUG [d9b16527] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [63af7d6e] Running if test ! -d ~/deploy/cirmar/releases/20170606130238; then echo "Directory does not exist '~/deploy/cirmar/releases/20170606130238'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [63af7d6e] Command: if test ! -d ~/deploy/cirmar/releases/20170606130238; then echo "Directory does not exist '~/deploy/cirmar/releases/20170606130238'" 1>&2; false; fi
+ DEBUG [63af7d6e] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [8d14afdb] Running /usr/bin/env echo "9119a7bdb0c42bf3ef49b000144fdc84324417c8" >> REVISION as pilmngr@172.17.26.9
+ DEBUG [8d14afdb] Command: cd ~/deploy/cirmar/releases/20170606130238 && /usr/bin/env echo "9119a7bdb0c42bf3ef49b000144fdc84324417c8" >> REVISION
+  INFO [8d14afdb] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [9b7e7432] Running /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170606130238/public as pilmngr@172.17.26.9
+ DEBUG [9b7e7432] Command: /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170606130238/public
+  INFO [9b7e7432] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [454119e5] Running [ -L ~/deploy/cirmar/releases/20170606130238/public/assets ] as pilmngr@172.17.26.9
+ DEBUG [454119e5] Command: [ -L ~/deploy/cirmar/releases/20170606130238/public/assets ]
+ DEBUG [454119e5] Finished in 0.018 seconds with exit status 1 (failed).
+ DEBUG [b5eb4f3e] Running [ -d ~/deploy/cirmar/releases/20170606130238/public/assets ] as pilmngr@172.17.26.9
+ DEBUG [b5eb4f3e] Command: [ -d ~/deploy/cirmar/releases/20170606130238/public/assets ]
+ DEBUG [b5eb4f3e] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [1b848a2a] Running /usr/bin/env rm -rf ~/deploy/cirmar/releases/20170606130238/public/assets as pilmngr@172.17.26.9
+ DEBUG [1b848a2a] Command: /usr/bin/env rm -rf ~/deploy/cirmar/releases/20170606130238/public/assets
+  INFO [1b848a2a] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [c26f87ab] Running /usr/bin/env ln -s ~/deploy/cirmar/shared/public/assets ~/deploy/cirmar/releases/20170606130238/public/assets as pilmngr@172.17.26.9
+ DEBUG [c26f87ab] Command: /usr/bin/env ln -s ~/deploy/cirmar/shared/public/assets ~/deploy/cirmar/releases/20170606130238/public/assets
+  INFO [c26f87ab] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [ec3c1be6] Running if test ! -d ~/deploy/cirmar/releases/20170606130238; then echo "Directory does not exist '~/deploy/cirmar/releases/20170606130238'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [ec3c1be6] Command: if test ! -d ~/deploy/cirmar/releases/20170606130238; then echo "Directory does not exist '~/deploy/cirmar/releases/20170606130238'" 1>&2; false; fi
+ DEBUG [ec3c1be6] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [364277c1] Running ~/.rvm/bin/rvm default do bundle check --path ~/deploy/cirmar/shared/bundle as pilmngr@172.17.26.9
+ DEBUG [364277c1] Command: cd ~/deploy/cirmar/releases/20170606130238 && ~/.rvm/bin/rvm default do bundle check --path ~/deploy/cirmar/shared/bundle
+ DEBUG [364277c1] 	The following gems are missing
+ DEBUG [364277c1] 	 * byebug (9.0.6)
+ DEBUG [364277c1] 	 * debug_inspector (0.0.2)
+ DEBUG [364277c1] 	 * binding_of_caller (0.7.2)
+ DEBUG [364277c1] 	 * web-console (2.3.0)
+ DEBUG [364277c1] 	 * spring (2.0.1)
+ DEBUG [364277c1] 	 * net-ssh (4.1.0)
+ DEBUG [364277c1] 	 * net-scp (1.2.1)
+ DEBUG [364277c1] 	 * sshkit (1.13.1)
+ DEBUG [364277c1] 	 * airbrussh (1.2.0)
+ DEBUG [364277c1] 	 * capistrano (3.8.1)
+ DEBUG [364277c1] 	 * capistrano-bundler (1.2.0)
+ DEBUG [364277c1] 	 * capistrano-rails (1.2.3)
+ DEBUG [364277c1] 	 * capistrano-rvm (0.1.2)
+ DEBUG [364277c1] 	Install missing gems with `bundle install`
+ DEBUG [364277c1] 	The latest bundler is 1.15.1, but you are currently running 1.15.0.
+To update, run `gem install bundler`
+ DEBUG [364277c1] Finished in 0.760 seconds with exit status 1 (failed).
+  INFO [35675808] Running ~/.rvm/bin/rvm default do bundle install --path ~/deploy/cirmar/shared/bundle --without development test --deployment --quiet as pilmngr@172.17.26.9
+ DEBUG [35675808] Command: cd ~/deploy/cirmar/releases/20170606130238 && ~/.rvm/bin/rvm default do bundle install --path ~/deploy/cirmar/shared/bundle --without development test --deployment --quiet
+  INFO [35675808] Finished in 6.428 seconds with exit status 0 (successful).
+ DEBUG [2f90e02a] Running if test ! -d ~/deploy/cirmar/releases/20170606130238; then echo "Directory does not exist '~/deploy/cirmar/releases/20170606130238'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [2f90e02a] Command: if test ! -d ~/deploy/cirmar/releases/20170606130238; then echo "Directory does not exist '~/deploy/cirmar/releases/20170606130238'" 1>&2; false; fi
+ DEBUG [2f90e02a] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [3893e3b7] Running ~/.rvm/bin/rvm default do bundle exec rake assets:precompile as pilmngr@172.17.26.9
+ DEBUG [3893e3b7] Command: cd ~/deploy/cirmar/releases/20170606130238 && ( export RAILS_ENV="production" ; ~/.rvm/bin/rvm default do bundle exec rake assets:precompile )
+ DEBUG [3893e3b7] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:51: warning: constant ::Fixnum is deprecated
+/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:52: warning: constant ::Bignum is deprecated
+ DEBUG [3893e3b7] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/core_ext/numeric/conversions.rb:138: warning: constant ::Fixnum is deprecated
+ DEBUG [3893e3b7] 	Overwriting existing field email in class User.
+  INFO [3893e3b7] Finished in 5.240 seconds with exit status 0 (successful).
+ DEBUG [8a1a69e0] Running if test ! -d ~/deploy/cirmar/releases/20170606130238; then echo "Directory does not exist '~/deploy/cirmar/releases/20170606130238'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [8a1a69e0] Command: if test ! -d ~/deploy/cirmar/releases/20170606130238; then echo "Directory does not exist '~/deploy/cirmar/releases/20170606130238'" 1>&2; false; fi
+ DEBUG [8a1a69e0] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [37bc4d8c] Running /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170606130238/assets_manifest_backup as pilmngr@172.17.26.9
+ DEBUG [37bc4d8c] Command: cd ~/deploy/cirmar/releases/20170606130238 && /usr/bin/env mkdir -p ~/deploy/cirmar/releases/20170606130238/assets_manifest_backup
+  INFO [37bc4d8c] Finished in 0.016 seconds with exit status 0 (successful).
+ DEBUG [85d3da69] Running /usr/bin/env ls ~/deploy/cirmar/releases/20170606130238/public/assets/.sprockets-manifest* as pilmngr@172.17.26.9
+ DEBUG [85d3da69] Command: cd ~/deploy/cirmar/releases/20170606130238 && /usr/bin/env ls ~/deploy/cirmar/releases/20170606130238/public/assets/.sprockets-manifest*
+ DEBUG [85d3da69] 	/home/pilmngr/deploy/cirmar/releases/20170606130238/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json
+ DEBUG [85d3da69] Finished in 0.016 seconds with exit status 0 (successful).
+ DEBUG [947c35fc] Running /usr/bin/env ls ~/deploy/cirmar/releases/20170606130238/public/assets/.sprockets-manifest* as pilmngr@172.17.26.9
+ DEBUG [947c35fc] Command: cd ~/deploy/cirmar/releases/20170606130238 && /usr/bin/env ls ~/deploy/cirmar/releases/20170606130238/public/assets/.sprockets-manifest*
+ DEBUG [947c35fc] 	/home/pilmngr/deploy/cirmar/releases/20170606130238/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json
+ DEBUG [947c35fc] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [758924f3] Running /usr/bin/env cp /home/pilmngr/deploy/cirmar/releases/20170606130238/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json ~/deploy/cirmar/releases/20170606130238/assets_manifest_backup as pilmngr@172.17.26.9
+ DEBUG [758924f3] Command: cd ~/deploy/cirmar/releases/20170606130238 && /usr/bin/env cp /home/pilmngr/deploy/cirmar/releases/20170606130238/public/assets/.sprockets-manifest-619570c6fe6727a054920198f6b49177.json ~/deploy/cirmar/releases/20170606130238/assets_manifest_backup
+  INFO [758924f3] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [8ab8abe5] Running if test ! -d ~/deploy/cirmar/releases/20170606130238; then echo "Directory does not exist '~/deploy/cirmar/releases/20170606130238'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [8ab8abe5] Command: if test ! -d ~/deploy/cirmar/releases/20170606130238; then echo "Directory does not exist '~/deploy/cirmar/releases/20170606130238'" 1>&2; false; fi
+ DEBUG [8ab8abe5] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [6df516e6] Running ~/.rvm/bin/rvm default do bundle exec rake db:migrate as pilmngr@172.17.26.9
+ DEBUG [6df516e6] Command: cd ~/deploy/cirmar/releases/20170606130238 && ( export RAILS_ENV="production" ; ~/.rvm/bin/rvm default do bundle exec rake db:migrate )
+ DEBUG [6df516e6] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:51: warning: constant ::Fixnum is deprecated
+/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:52: warning: constant ::Bignum is deprecated
+ DEBUG [6df516e6] 	/home/pilmngr/deploy/cirmar/shared/bundle/ruby/2.4.0/gems/activesupport-5.0.1/lib/active_support/core_ext/numeric/conversions.rb:138: warning: constant ::Fixnum is deprecated
+ DEBUG [6df516e6] 	Overwriting existing field email in class User.
+  INFO [6df516e6] Finished in 1.843 seconds with exit status 0 (successful).
+  INFO [08f59dc4] Running /usr/bin/env ln -s ~/deploy/cirmar/releases/20170606130238 ~/deploy/cirmar/releases/current as pilmngr@172.17.26.9
+ DEBUG [08f59dc4] Command: /usr/bin/env ln -s ~/deploy/cirmar/releases/20170606130238 ~/deploy/cirmar/releases/current
+  INFO [08f59dc4] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [b2056e41] Running /usr/bin/env mv ~/deploy/cirmar/releases/current ~/deploy/cirmar as pilmngr@172.17.26.9
+ DEBUG [b2056e41] Command: /usr/bin/env mv ~/deploy/cirmar/releases/current ~/deploy/cirmar
+  INFO [b2056e41] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [d66d02a2] Running /usr/bin/env ls -x ~/deploy/cirmar/releases as pilmngr@172.17.26.9
+ DEBUG [d66d02a2] Command: /usr/bin/env ls -x ~/deploy/cirmar/releases
+ DEBUG [d66d02a2] 	20170602134436	20170602143247	20170602151633	20170602152839	20170606125505
+20170606130238
+ DEBUG [d66d02a2] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 172.17.26.9
+  INFO [d67faabf] Running /usr/bin/env rm -rf ~/deploy/cirmar/releases/20170602134436 as pilmngr@172.17.26.9
+ DEBUG [d67faabf] Command: /usr/bin/env rm -rf ~/deploy/cirmar/releases/20170602134436
+  INFO [d67faabf] Finished in 0.109 seconds with exit status 0 (successful).
+ DEBUG [c9d411d2] Running if test ! -d ~/deploy/cirmar/releases; then echo "Directory does not exist '~/deploy/cirmar/releases'" 1>&2; false; fi as pilmngr@172.17.26.9
+ DEBUG [c9d411d2] Command: if test ! -d ~/deploy/cirmar/releases; then echo "Directory does not exist '~/deploy/cirmar/releases'" 1>&2; false; fi
+ DEBUG [c9d411d2] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [ba70481f] Running /usr/bin/env echo "Branch master (at 9119a7bdb0c42bf3ef49b000144fdc84324417c8) deployed as release 20170606130238 by aboozar" >> ~/deploy/cirmar/revisions.log as pilmngr@172.17.26.9
+ DEBUG [ba70481f] Command: cd ~/deploy/cirmar/releases && /usr/bin/env echo "Branch master (at 9119a7bdb0c42bf3ef49b000144fdc84324417c8) deployed as release 20170606130238 by aboozar" >> ~/deploy/cirmar/revisions.log
+  INFO [ba70481f] Finished in 0.012 seconds with exit status 0 (successful).
