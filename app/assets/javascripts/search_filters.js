@@ -1,6 +1,5 @@
 var ready = function(){
 ////////////////   Search Filter - Type de messages    ///////////////////////////////////
-<<<<<<< HEAD
   $(function() {
     $('input[name="daterange"]').daterangepicker({
       singleDatePicker: false,
@@ -18,8 +17,6 @@ var ready = function(){
 
 
 ////////////////   Search Filter - Type de messages    ///////////////////////////////////
-=======
->>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
 
       $("#m1").on('change', function(){
           insertOneParam("type_de_message", "1");
@@ -53,7 +50,6 @@ var ready = function(){
           insertOneParam("type_de_message", "all");
         });      
 
-<<<<<<< HEAD
 
 /////////////////   Search Filter - Source    ///////////////////////////////////   
 
@@ -69,8 +65,6 @@ var ready = function(){
           insertOneParam("source", "all");
         });    
 
-=======
->>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
 /////////////////   Search Filter - Type de Navire    ///////////////////////////////////
 
       $("#n50").on('change', function(){

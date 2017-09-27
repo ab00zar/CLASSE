@@ -8,7 +8,6 @@ class Message
   field :shipType, type: Integer
 
   scope :type, ->(tpe) { where(message_type: tpe) }
-<<<<<<< HEAD
   scope :source, ->(src) {where(source: src)}
   scope :navire, ->(value) { where(shipType: value) }
   scope :ship, ->{select("mmsi").distinct}
@@ -18,11 +17,6 @@ class Message
   #scopes for stats page
   scope :datesearch, ->(dte1, dte2) {where(:date.gte => dte1).where(:date.lte => dte2)} #{select("date")} Message.where(:date.lte => Time.now).count
   
-=======
-  scope :navire, ->(value) { where(shipType: value) }
-  scope :ship, ->{select("mmsi").distinct}
-
->>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
   def self.to_csv()
       #all = Message.type(opt)
       column_names = ['type', 'repeatIndicator', 'mmsi']
@@ -34,7 +28,6 @@ class Message
        end
   end
 
-<<<<<<< HEAD
 
   def self.getLatLong(latitude)
     tempSize = latitude.split(" ").second.size
@@ -45,8 +38,6 @@ class Message
 
 
 
-=======
->>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
 def self.today
   map = %Q{
     function() {

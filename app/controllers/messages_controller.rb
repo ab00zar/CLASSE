@@ -1,10 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-<<<<<<< HEAD
   skip_before_filter :verify_authenticity_token
-=======
-
->>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
   # def csv
 
   #     file = "#{Rails.root}/public/data.csv"
@@ -17,15 +13,12 @@ class MessagesController < ApplicationController
   #           end
   #     end
   # end
-<<<<<<< HEAD
   def stats
     @messages = Message.all.count
     #@ships = Message.all.distinct("mmsi").count
     #@jan = Message.janv.count # Message.where(:date.lte => Time.now).count
   end
 
-=======
->>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
   def ships
     #@ships =  Message.today
     #@ships = Message.select("mmsi").distinct #
@@ -41,7 +34,6 @@ class MessagesController < ApplicationController
     
     #@messages = Message.where("#{:mmsi}" => 100010001).count
     #@messages = Message.distinct(:mmsi).count
-<<<<<<< HEAD
     @messages = Message.where(mmsi: params[:id]).order_by(:date => 'desc')
   end
   # GET /messages
@@ -52,12 +44,6 @@ class MessagesController < ApplicationController
     @messages = Kaminari.paginate_array(messages).page(params[:page])
   end
 
-=======
-    @messages = Message.where(mmsi: params[:id])
-  end
-  # GET /messages
-  # GET /messages.json
->>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
   def index
       
       #case params[:type_de_message]
@@ -73,7 +59,6 @@ class MessagesController < ApplicationController
       #        @messages = Message.where(:type => "1")
       #end
 
-<<<<<<< HEAD
 
     #Date - Search filter  
     if params[:daterange] == "all" || params[:daterange].blank?
@@ -102,22 +87,11 @@ class MessagesController < ApplicationController
     end
 
 
-=======
-        if params[:type_de_message] == "all" || params[:type_de_message].blank?
-          @messages = Message.limit(50)#all.page(params[:page])
-        elsif !params[:type_de_message].blank?
-              @messages = Message.type(params[:type_de_message]).page(params[:page])
-            end
->>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
 
        #if params[:type_de_navire] == "all" || params[:type_de_navire].blank?
          #    @messages = 
        if !params[:type_de_navire].blank? && params[:type_de_navire] != "all"
-<<<<<<< HEAD
           @messages = @messages.navire(params[:type_de_navire]).order_by(:date => 'desc')
-=======
-          @messages = @messages.navire(params[:type_de_navire])
->>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
         end
       respond_to do |format|
 
