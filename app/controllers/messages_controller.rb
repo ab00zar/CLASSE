@@ -74,8 +74,9 @@ class MessagesController < ApplicationController
     if params[:type_de_message] == "all" || params[:type_de_message].blank?
       @messages = Message.limit(50).order_by(:date => 'desc')#all.page(params[:page])
     elsif !params[:type_de_message].blank?       
-      messages = Message.limit(50) #.type(params[:type_de_message]).order_by(:date => 'desc')
-      @messages = Kaminari.paginate_array(messages).page(params[:page])     
+      #messages = Message.limit(50) #.type(params[:type_de_message]).order_by(:date => 'desc')
+      #@messages = Kaminari.paginate_array(messages).page(params[:page])     
+      @messages = Message.type(params[:type_de_message]).order_by(:date => 'desc')
     end
 
 
