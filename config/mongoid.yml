@@ -9,8 +9,12 @@ development:
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
+<<<<<<< HEAD
         #- 172.17.26.9:27017/
         - localhost:27017/
+=======
+        - 172.17.26.9:27017/
+>>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
       options:
         # Change the default write concern. (default = { w: 1 })
         # write:

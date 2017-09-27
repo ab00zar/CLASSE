@@ -48,6 +48,7 @@
                   </div>
                   <div class="panel-body">
                           <h6><i class="fa fa-calendar black fa-fw fa-lg" aria-hidden="true"></i> Date</h6>
+<<<<<<< HEAD
                           <input type="text" name="daterange" id="daterange" value="01/01/2017 - 01/31/2017" />
                           <br/>
                           <br/>
@@ -75,6 +76,11 @@
                                 </form>                                                                    
                           <br/>
                           <h6><i class="fa fa-envelope-o fa-fw fa-lg" aria-hidden="true"></i> Message Type</h6>
+=======
+                          <br/>
+                          <br/>
+                          <h6><i class="fa fa-envelope-o fa-fw fa-lg" aria-hidden="true"></i> Type de messages</h6>
+>>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
                               <form action="form-control">
                                     <input type="radio" name="m-button" id="mall" value="all" <%= if params[:type_de_message] == "all" || params[:type_de_message].blank?
                                       "checked" 
@@ -102,7 +108,11 @@
                                       end %> >19<br>
                                 </form>                                                                    
                           <br/>
+<<<<<<< HEAD
                           <h6><i class="fa fa-ship fa-fw fa-lg" aria-hidden="true"></i> Ship Type</h6>
+=======
+                          <h6><i class="fa fa-ship fa-fw fa-lg" aria-hidden="true"></i> Type de navire</h6>
+>>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
                               <form action="form-control">
                                     <div style="font-size: 10px bold;">
                                     <input type="radio" name="navire-button" id="nall" value="all" <%= if params[:type_de_navire] == "all" 
@@ -150,8 +160,12 @@
                         <h4 class="panel-title">Messages</h4>
                   </div>
                   <div class="panel-body">
+<<<<<<< HEAD
                           <p id="notice"><%= notice %>
                           </p>
+=======
+                          <p id="notice"><%= notice %></p>
+>>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
                           <p>
                             Download:
                             <%= link_to "CSV", messages_path(format: "csv", :type_de_message => params[:type_de_message],
@@ -164,11 +178,20 @@
                             <thead>
                               <tr>
                                 <th>Type</th>
+<<<<<<< HEAD
                                 <th>MMSI</th>
                                 <th>Longitude</th>
                                 <th>Latitude</th>
                                 <th>Received Date</th>
                                 <th>Source</th>
+=======
+                                <th>Repeatindicator</th>
+                                <th>MMSI</th>
+                                <th>Longitude</th>
+                                <th>Latitude</th>
+                                <th>Course Over Ground</th>
+                                <th>Ship Type</th>
+>>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
                                 <th colspan="1"></th>
                               </tr>
                             </thead>
@@ -177,6 +200,10 @@
                               <% @messages.each do |message| %>
                                 <tr>
                                   <td><%= message.message_type %></td>
+<<<<<<< HEAD
+=======
+                                  <td><%= message.repeat_indicator %></td>
+>>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
                                   <td><%= message.mmsi %></td>
                                   <td><%= if message.has_attribute?("longitude") 
                                                           message.longitude 
@@ -186,12 +213,21 @@
                                                           message.latitude
                                                     end %>
                                   </td>
+<<<<<<< HEAD
                                   <td><%= if message.has_attribute?("date") 
                                                           message.date
                                                     end %>
                                   </td>
                                   <td><%= if message.has_attribute?("source") 
                                                           message.source
+=======
+                                  <td><%= if message.has_attribute?("course_over_ground") 
+                                                          message.course_over_ground
+                                                    end %>
+                                  </td>
+                                  <td><%= if message.has_attribute?("ship_type") 
+                                                          message.ship_type
+>>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
                                                     end %>
                                   </td>
                                   <td><%= link_to 'Show', message %></td>
@@ -201,7 +237,11 @@
                               <% end %>
                             </tbody>
                           </table>
+<<<<<<< HEAD
                           <%= paginate @messages %>
+=======
+                          
+>>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
                   </div>
               </div>         
 
@@ -215,6 +255,7 @@
        <div class="col-sm-1">
       </div>     
 </div>
+<<<<<<< HEAD
 <script src="assets/search_filters.js"></script>
 <script>
       // This example adds a user-editable rectangle to the map.
@@ -275,3 +316,6 @@
 
     </script>
 
+=======
+<script src="assets/search_filters.js"></script>
+>>>>>>> e13d96732411e0cc266c6590d5dfed3490dede10
