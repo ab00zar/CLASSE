@@ -1,0 +1,134 @@
+<div class="row">
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div class="col-sm-1">
+	</div>
+	<div class="col-sm-10">
+		<div class="row">
+			<div class="panel panel-primary">
+	         	<div class="panel-heading">
+	                <h4 class="panel-title">Stats</h4>
+	          	</div>
+	          	<div class="panel-body">
+					<table class="table table-hover">
+						<thead>
+						  <tr>
+						    <th>Number Of Messages</th>
+						    <th>Number of Ships</th>
+						  </tr>
+						</thead>
+
+					    <tbody>
+					      
+					        <tr>
+					          <td><%= "salam" %></td>
+					          <td><%= "chetori" %></td>
+
+					        </tr>
+					      
+					    </tbody>
+					</table>
+                    
+                    Message Types
+
+                    Number of Messages & Ships per Month - Entekhabe Maah - local/aishub    
+                    <br/>
+                    <br/>
+					<ul class="nav nav-tabs">
+						<li class="active">
+
+							<a href="#2017" data-toggle="tab">2017</a>
+						</li>
+						<li>
+							<a href="#2016" data-toggle="tab">2016</a>
+						</li>
+						<li>
+							<a href="#2015" data-toggle="tab">2015</a>
+						</li>
+					</ul>                    
+
+					<div class="tab-content ">
+						<br/>
+                    <br/>
+						<div class="tab-pane active" id="2017">
+							<div id="container2017" style="width:100%; height:400px;"></div>
+						</div>
+						<div class="tab-pane" id="2016">
+							<div id="container2016" style="width:100%; height:400px;"></div>
+						</div>
+						<div class="tab-pane" id="2015">
+							<h3>Coming soon ...</h3>
+						</div>
+					</div>
+                      
+                    <br/>
+                    <br/>
+
+
+
+	          </div>
+	      </div>
+		</div>
+	</div>
+    
+
+	<div class="col-sm-1">
+	</div>
+</div>
+<script type="text/javascript">
+	$(function () { 
+    var myChart = Highcharts.chart('container2017', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Number of Messages per Month'
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Received'
+            }
+        },
+        series: [{
+            name: 'Local',
+            data: [1, 0, 4, 2, 2, 5, 3, 0, 4, 2, 0, 4]
+        }, {
+            name: 'AIShub',
+            data: [5, 7, 3, 5, 6, 8, 9, 6, 5, 3, 3, 5]
+        }]
+    });
+});
+</script>
+<script type="text/javascript">
+	$(function () { 
+    var myChart = Highcharts.chart('container2016', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Number of Messages per Month'
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Received'
+            }
+        },
+        series: [{
+            name: 'Local',
+            data: [2, 0, 3, 4, 1, 2, 3, 0, 1, 2, 2, 3]
+        }, {
+            name: 'AIShub',
+            data: [4, 6, 6, 5, 5, 4, 9, 4, 6, 4, 3, 7]
+        }]
+    });
+});
+</script>
