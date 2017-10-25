@@ -1,0 +1,148 @@
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="/assets/logos/logo_cirmar_small.png" style="margin-top: -10px; margin-left: 10px;">
+          </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+<!--        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li> -->
+        <li><a href="/stats">Stats</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">AIS <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/messages">Messages</a></li>
+            <li><a href="/covered_ships">Covered Ships</a></li>
+          </ul>
+        </li>
+        <li class="active"><a href="/ships">Ships</a></li>
+        <li><a href="/metadata">Metadata</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome!</a></li>
+        <li><a href="/users/sign_out"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+  <br/>
+  <br/>
+  <br/>
+
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+  <div class="row">
+    <div class="panel panel-primary">
+      <div class="panel-heading">          
+        <h4 class="panel-title">Ship <%= @ship.id %></h4>
+      </div>
+      <div class="panel-body">
+        <p>
+          <strong>IMO:</strong>
+          <%= @ship.id %>
+        </p>
+        <p>
+          <strong>Name:</strong>
+          <%= @ship.name %>
+        </p>
+
+        <p>
+          <strong>Teu:</strong>
+          <%= @ship.teu %>
+        </p>
+
+        <p>
+          <strong>Built:</strong>
+          <%= @ship.built %>
+        </p>
+
+        <p>
+          <strong>Deadweight:</strong>
+          <%= @ship.deadweight %>
+        </p>
+
+        <p>
+          <strong>Draught:</strong>
+          <%= @ship.draught %>
+        </p>
+
+        <p>
+          <strong>Length:</strong>
+          <%= @ship.length %>
+        </p>
+
+        <p>
+          <strong>Flag:</strong>
+          <%= @ship.flag %>
+        </p>
+        <% if !@ship.operator.nil? %>
+          <p>
+            <strong>Operator:</strong>
+            <%= @ship.operator %>
+          </p>
+        <% end %>
+        <% if !@ship.registered_owner.nil? %>
+          <p>
+            <strong>Registered owner:</strong>
+            <%= @ship.registered_owner %>
+          </p>
+        <% end %>
+        <% if !@ship.shipmanager.nil? %>
+          <p>
+            <strong>Shipmanager:</strong>
+            <%= @ship.shipmanager %>
+          </p>
+        <% end %>
+        <% if !@ship.operator_url.nil? %>  
+          <p>
+            <strong>Operator url:</strong>
+            <%= @ship.operator_url %>
+          </p>
+        <% end %>
+        <% if !@ship.operator_list_url.nil? %>
+          <p>
+            <strong>Operator list url:</strong>
+            <%= @ship.operator_list_url %>
+          </p>
+        <% end %>
+        <% if !@ship.owner_url.nil? %>
+          <p>
+            <strong>Owner url:</strong>
+            <%= @ship.owner_url %>
+          </p>
+        <% end %>
+        <% if !@ship.owner_list_url.nil? %>
+          <p>
+            <strong>Owner list url:</strong>
+            <%= @ship.owner_list_url %>
+          </p>
+        <% end %>
+        <% if !@ship.shipmanager_url.nil? %>
+          <p>
+            <strong>Shipmanager url:</strong>
+            <%= @ship.shipmanager_url %>
+          </p>
+        <% end %>
+        <% if !@ship.shipmanager_list_url.nil? %>
+          <p>
+            <strong>Shipmanager list url:</strong>
+            <%= @ship.shipmanager_list_url %>
+          </p>
+        <% end %>
+        <p>
+          <strong>Category:</strong>
+          <%= @ship.category %>
+        </p>
+
+<!--         <%= link_to 'Edit', edit_ship_path(@ship) %> |
+ -->        <%= link_to 'Back', ships_path %>
+      </div>
+    </div>
+  </div>
+</div>

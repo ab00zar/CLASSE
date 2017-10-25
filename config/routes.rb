@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ships
   devise_for :users
   resources :users
   resources :messages
@@ -15,11 +16,12 @@ Rails.application.routes.draw do
 #get 'messages/csv' => 'message#csv'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  get '/metadata' => 'messages#metadata' 
   get '/stats' => 'messages#stats' 
-  get '/ships' => 'messages#ships'
+  get '/covered_ships' => 'messages#covered_ships'
 
-  get '/ships/:id' => 'messages#ships_show'
-  post '/ships/:id' => 'messages#ships_show'
+  get '/covered_ships/:id' => 'messages#ships_show'
+  post '/covered_ships/:id' => 'messages#ships_show'
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :messages do

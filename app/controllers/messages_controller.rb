@@ -13,13 +13,16 @@ class MessagesController < ApplicationController
   #           end
   #     end
   # end
+  def metadata
+  end
+
   def stats
     @messages = Message.all.count
     #@ships = Message.all.distinct("mmsi").count
     #@jan = Message.janv.count # Message.where(:date.lte => Time.now).count
   end
 
-  def ships
+  def covered_ships
     #@ships =  Message.today
     #@ships = Message.select("mmsi").distinct #
    # sshd = [{"$group"=> {"_id" => "$mmsi","nu"=>{$sum=>1}}}]

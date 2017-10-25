@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  teu: 1
+  built: MyString
+  deadweight: 1
+  draught: 1.5
+  length: 1.5
+  flag: MyString
+  operator: MyString
+  registered_owner: MyString
+  shipmanager: MyString
+  operator_url: MyString
+  operator_list_url: MyString
+  owner_url: MyString
+  owner_list_url: MyString
+  shipmanager_url: MyString
+  shipmanager_list_url: MyString
+  category: MyString
+
+two:
+  name: MyString
+  teu: 1
+  built: MyString
+  deadweight: 1
+  draught: 1.5
+  length: 1.5
+  flag: MyString
+  operator: MyString
+  registered_owner: MyString
+  shipmanager: MyString
+  operator_url: MyString
+  operator_list_url: MyString
+  owner_url: MyString
+  owner_list_url: MyString
+  shipmanager_url: MyString
+  shipmanager_list_url: MyString
+  category: MyString

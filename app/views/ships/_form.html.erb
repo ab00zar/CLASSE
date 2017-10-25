@@ -1,0 +1,102 @@
+<%= form_for(ship) do |f| %>
+  <% if ship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ship.errors.count, "error") %> prohibited this ship from being saved:</h2>
+
+      <ul>
+      <% ship.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :teu %>
+    <%= f.number_field :teu %>
+  </div>
+
+  <div class="field">
+    <%= f.label :built %>
+    <%= f.text_field :built %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deadweight %>
+    <%= f.number_field :deadweight %>
+  </div>
+
+  <div class="field">
+    <%= f.label :draught %>
+    <%= f.text_field :draught %>
+  </div>
+
+  <div class="field">
+    <%= f.label :length %>
+    <%= f.text_field :length %>
+  </div>
+
+  <div class="field">
+    <%= f.label :flag %>
+    <%= f.text_field :flag %>
+  </div>
+
+  <div class="field">
+    <%= f.label :operator %>
+    <%= f.text_field :operator %>
+  </div>
+
+  <div class="field">
+    <%= f.label :registered_owner %>
+    <%= f.text_field :registered_owner %>
+  </div>
+
+  <div class="field">
+    <%= f.label :shipmanager %>
+    <%= f.text_field :shipmanager %>
+  </div>
+
+  <div class="field">
+    <%= f.label :operator_url %>
+    <%= f.text_field :operator_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :operator_list_url %>
+    <%= f.text_field :operator_list_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :owner_url %>
+    <%= f.text_field :owner_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :owner_list_url %>
+    <%= f.text_field :owner_list_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :shipmanager_url %>
+    <%= f.text_field :shipmanager_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :shipmanager_list_url %>
+    <%= f.text_field :shipmanager_list_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
