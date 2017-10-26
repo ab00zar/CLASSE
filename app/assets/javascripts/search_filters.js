@@ -1,35 +1,6 @@
 var ready = function(){
 
 
-  if(locations.length > 0){ 
-    function initMap() {
-      var bounds = new google.maps.LatLngBounds();
-
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 20,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      });
-
-      var infowindow = new google.maps.InfoWindow();
-
-      var marker, i;
-
-      for (i = 0; i < locations.length; i++) { 
-        marker = new google.maps.Marker({
-          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-          map: map,
-          title: locations[i][1] + " , " + locations[i][2] 
-        });
-
-        //extend the bounds to include each marker's position
-        bounds.extend(marker.position);
-
-        //now fit the map to the newly inclusive bounds
-        map.fitBounds(bounds);
-
-      }
-    }
-  }
   
 
 
