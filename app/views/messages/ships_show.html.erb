@@ -55,25 +55,7 @@
               </thead>
 
               <tbody>                            
-                <% locs = [] 
-                  @messages.each do |message| 
-                    if message.message_type != 5 
-                      locs.push(['01', Message.getLatLong(message.latitude), Message.getLatLong(message.longitude)])
-                    end
-                    %>
-                  <tr>
-                    <td><%= message.message_type %></td>
-                    <td><%= if message.has_attribute?("latitude") 
-                                            message.latitude
-                                      end %>
-                    </td>
-                    <td><%= if message.has_attribute?("longitude") 
-                                            message.longitude 
-                                      end %>
-                    </td>
-                    <td><%= link_to 'Show', message %></td>
-                  </tr>
-                <% end %>
+
               </tbody>                          
             </table>
           </div>
@@ -84,7 +66,7 @@
           <p align="right">
             <%= link_to 'Back', ships_path %>
           </p>
-          <%= javascript_tag "locations = #{locs[0..10].to_json.html_safe};" %>
+          
 	        </div>
 	      </div>         
     </div>
