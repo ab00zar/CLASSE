@@ -37,7 +37,7 @@ class MessagesController < ApplicationController
     
     #@messages = Message.where("#{:mmsi}" => 100010001).count
     #@messages = Message.distinct(:mmsi).count
-    @messages = Message.where(mmsi: params[:id]).order_by(:date => 'desc')
+    @messages = Message.where(mmsi: params[:id]).limit(50) #.order_by(:date => 'desc')
   end
   # GET /messages
   # GET /messages.json
