@@ -57,7 +57,7 @@
           <tbody>
               <% @ships.each do |ship| %>
                 <tr>
-                  <td><%= ship.id.to_i %></td>
+                  <td><%= ship.id %></td>
                   <td><%= ship.name %></td>
                   <td><%= ship.built %></td>
                   <td><%= ship.flag %></td>
@@ -66,6 +66,7 @@
               <% end %>
             </tbody>
         </table>
+        <%= paginate @ships %>
       </div>
     </div>
   </div>

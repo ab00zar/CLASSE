@@ -4,7 +4,8 @@ class ShipsController < ApplicationController
   # GET /ships
   # GET /ships.json
   def index
-    @ships = Ship.all.limit(50)
+    @ships = Ship.all
+    @ships = Kaminari.paginate_array(@ships).page(params[:page])
   end
 
   # GET /ships/1

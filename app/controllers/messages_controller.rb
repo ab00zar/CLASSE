@@ -43,8 +43,8 @@ class MessagesController < ApplicationController
   # GET /messages.json
   
   def indexs 
-    messages = Message.all.limit(500)
-    @messages = Kaminari.paginate_array(messages).page(params[:page])
+    @messages = Message.all
+    #@messages = Kaminari.paginate_array(messages).page(params[:page])
   end
 
   def index
