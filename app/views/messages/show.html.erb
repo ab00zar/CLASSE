@@ -516,8 +516,8 @@
     <script>
       <% if @message.message_type != 5 %>
         function initMap() {
-          var ltt = parseFloat('<%= Message.getLatLong(@message.latitude) %>');
-          var lgt = parseFloat('<%= Message.getLatLong(@message.longitude) %>');
+          var ltt = parseFloat('<%= @message.latitude %>');
+          var lgt = parseFloat('<%= @message.longitude %>');
           var uluru = {lat: ltt, lng: lgt};
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 11,
