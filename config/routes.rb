@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :metadonnees
   resources :ships
   devise_for :users
   resources :users

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Metadonnees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Descriptif</th>
+      <th>Date</th>
+      <th>Couverture</th>
+      <th>Nombre</th>
+      <th>Thematique</th>
+      <th>Format</th>
+      <th>Geocode</th>
+      <th>Projection</th>
+      <th>Type</th>
+      <th>Organisme</th>
+      <th>Mail</th>
+      <th>Predicite</th>
+      <th>Nom</th>
+      <th>Tel</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @metadonnees.each do |metadonnee| %>
+      <tr>
+        <td><%= metadonnee.titre %></td>
+        <td><%= metadonnee.descriptif %></td>
+        <td><%= metadonnee.date %></td>
+        <td><%= metadonnee.couverture %></td>
+        <td><%= metadonnee.nombre %></td>
+        <td><%= metadonnee.thematique %></td>
+        <td><%= metadonnee.format %></td>
+        <td><%= metadonnee.geocode %></td>
+        <td><%= metadonnee.projection %></td>
+        <td><%= metadonnee.type %></td>
+        <td><%= metadonnee.organisme %></td>
+        <td><%= metadonnee.mail %></td>
+        <td><%= metadonnee.periodicite %></td>
+        <td><%= metadonnee.nom %></td>
+        <td><%= metadonnee.tel %></td>
+        <td><%= link_to 'Show', metadonnee %></td>
+        <td><%= link_to 'Edit', edit_metadonnee_path(metadonnee) %></td>
+        <td><%= link_to 'Destroy', metadonnee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Metadonnee', new_metadonnee_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @metadonnee.titre %>
+</p>
+
+<p>
+  <strong>Descriptif:</strong>
+  <%= @metadonnee.descriptif %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @metadonnee.date %>
+</p>
+
+<p>
+  <strong>Couverture:</strong>
+  <%= @metadonnee.couverture %>
+</p>
+<p>
+  <strong>Thematique:</strong>
+  <%= @metadonnee.thematique %>
+</p>
+<p>
+  <strong>Format:</strong>
+  <%= @metadonnee.format %>
+</p>
+<%= link_to 'Edit', edit_metadonnee_path(@metadonnee) %> |
+<%= link_to 'Back', metadonnees_path %>

@@ -52,6 +52,8 @@ group :development do
   gem 'capistrano-rvm', '~> 0.1.2'
 end
 
+gem "mongoid-paperclip"
+
 gem 'devise'
 gem 'kaminari'
 gem 'rails_12factor', group: :production

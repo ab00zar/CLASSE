@@ -1,0 +1,453 @@
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css">
+
+    
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+
+<%= form_for(metadonnee) do |f| %>
+  <% if metadonnee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(metadonnee.errors.count, "error") %> prohibited this metadonnee from being saved:</h2>
+
+      <ul>
+      <% metadonnee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+              <div class="row">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Titre *</label>
+                  <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Nom caractéristique et souvent unique sous lequel la ressource est connue"></span>
+                  <%= f.text_field :titre, :class =>"form-control", :placeholder => "Titre" %>
+<!--                   <input type="input" class="form-control" id="exampleInputEmail1" placeholder="Titre">
+ -->                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Descriptif *</label>
+                  <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Bref résumé narratif du contenu de la ressource"></span>
+                  <%= f.text_field :descriptif, :class =>"form-control", :placeholder => "Descriptif" %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6" style="background-color: white;">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Date *</label>
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Date de référence de la ressource"></span>
+                    <%= f.text_field :date, :class =>"form-control from", :placeholder => "Date" %>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Couverture géographique</label>
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Étendue de la ressource dans l’espace géographique"></span>
+                    <%= f.text_field :couverture, :class =>"form-control", :placeholder => "Couverture géographique" %>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Nombre d’entités</label>
+                    <%= f.text_field :nombre, :class =>"form-control", :placeholder => "Nombre d’entités" %>
+                  </div>
+                </div>
+                <div class="col-sm-6" style="background-color: white;">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Thématique *</label><br/>
+<!--                     <select class="selectpicker" multiple data-max-options="3" title="Choisissez jusqu'à 3">
+                      <option>Transport</option>
+                      <option>Environnement</option>
+                      <option>Frontières, limites administratives</option>
+                      <option>Économie</option>
+                      <option>Géographie physique</option>
+                      <option>Cartes de base</option>
+                      <option>Hydrographie</option>
+                      <option>Occupation des sols</option>
+                      <option>Communication</option>
+                      <option>Constructions</option>
+                      <option>Société</option>
+                    </select> -->
+                    <%= f.select :thematique, "<option>Transport</option>
+                      <option>Environnement</option>
+                      <option>Frontières, limites administratives</option>
+                      <option>Économie</option>
+                      <option>Géographie physique</option>
+                      <option>Cartes de base</option>
+                      <option>Hydrographie</option>
+                      <option>Occupation des sols</option>
+                      <option>Communication</option>
+                      <option>Constructions</option>
+                      <option>Société</option>".html_safe, {}, {:multiple => true, :class => "selectpicker", :title =>"Choisissez jusqu'à 3", "data-max-options" =>"3"} %>
+                  </div>
+   
+                  
+<!--                   <div class="form-group">
+                    <label for="exampleInputPassword1">Format *</label>
+                    <div class="checkbox">
+                      <label class="checkbox-inline">
+                        <%= f.check_box :format, { :multiple => true, :class => "shape" }, 'Shape', nil %> Shape
+                      </label>
+                      <label class="checkbox-inline">
+                        <%= f.check_box :format, { :multiple => true, :class => "excel" }, 'Excel', nil %> Excel
+                      </label>
+                      <label class="checkbox-inline">
+                        <%= f.check_box :format, { :multiple => true, :class => "texte" }, 'Texte', nil %> Texte
+                      </label>
+                      <label class="checkbox-inline">
+                        <%= f.check_box :format, { :multiple => true, :class => "access" }, 'Access', nil %> Access
+                      </label>
+                      <label class="checkbox-inline">
+                        <%= f.check_box :format, { :multiple => true, :class => "autre" }, 'Autre', nil %> Autre
+                        <%= f.text_field :autre, :size => "10" %>
+                      </label>
+                      
+                      <%= f.file_field :shape_file, :id => "shape_file" %>
+                      <%= f.file_field :excel_file, :id => "excel_file" %>
+                      <%= f.file_field :texte_file, :id => "texte_file" %>
+                      <%= f.file_field :access_file, :id => "access_file" %>
+                      <%= f.file_field :autre_file, :id => "autre_file" %>
+                      
+                    </div>
+                  </div> -->
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Format *</label>
+                    <div class="radio">
+                      <label class="radio-inline">
+                        <%= f.radio_button :format, 'shape', :checked => true, :class => "file" %> Shape
+                      </label>
+                      <label class="radio-inline">
+                        <%= f.radio_button :format, 'excel', :class => "file" %> Excel
+                      </label>
+                      <label class="radio-inline">
+                        <%= f.radio_button :format, 'texte', :class => "file" %> Texte
+                      </label>
+                      <label class="radio-inline">
+                        <%= f.radio_button :format, 'access', :class => "file" %> Access
+                      </label>
+                      <label class="radio-inline">
+                        <%= f.radio_button :format, 'autre', :class => "file" %> Autre
+                        <%= f.text_field :autre, :size => "10" %>
+                      </label>
+                    </div>
+                    <%= f.file_field :file, :id => "file" %>
+                    <p style="font-size: 11px; margin-top: 5px;">Dans le cas de plusieurs fichiers, faites un fichier zip de tous et téléchargez</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row" >
+                <h3 align="center">Option pour les données géographiques</h3>
+                <div class="row">
+                  <div class="col-sm-6" style="background-color: white;">
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Géocodé à</label>
+                      <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Préciser la précision géographique de la donnée ( à l'adresse, à la rue, à la commune, ...)"></span>
+                      <%= f.text_field :geocode, :class =>"form-control", :placeholder => "Géocodé à" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Projection</label>
+                      <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Système de géoréférencement ou systèmes de coordonnées référence"></span>
+                      <%= f.text_field :projection, :class =>"form-control", :placeholder => "Projection" %>
+                    </div>                   
+                  </div>
+                  <div class="col-sm-6" style="background-color: white;">
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Type</label>
+                      <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Ponctuel, linéaire ou surfacique"></span>
+                      <%= f.text_field :type, :class =>"form-control", :placeholder => "Type" %>
+                    </div> 
+                  </div>
+                </div>
+              </div>
+
+              <div class="row" >
+                <h3 align="center">Source de la donnée</h3>
+                <div class="row">
+                  <div class="col-sm-6" style="background-color: white;">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Organisme émeteur *</label>
+                      <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Nom de l'organisation responsable de la création de la donnée"></span>
+                      <%= f.text_field :organisme, :class =>"form-control", :placeholder => "Organisme émeteur" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Mail contact *</label>
+                      <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Mail de la personne responsable de son acquisition"></span>
+                      <%= f.text_field :mail, :class =>"form-control", :placeholder => "Mail contact" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Périodicité de la mise à jour *</label>
+                      <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Préciser si la mise à jour annuelle, mensuelle, ... ou le moment de l'année (mois ou trimestre) pour sa mise à jour"></span>
+                      <%= f.text_field :periodicite, :class =>"form-control", :placeholder => "Périodicité" %>
+                    </div>
+                  </div>
+                  <div class="col-sm-6" style="background-color: white;">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nom contact *</label>
+                      <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Nom de la personne responsable de son acquisition"></span>
+                      <%= f.text_field :nom, :class =>"form-control", :placeholder => "Nom contact" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Tél. contact</label>
+                      <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Téléphone de la personne responsable de son acquisition"></span>
+                      <%= f.text_field :tel, :class =>"form-control", :placeholder => "Tél. contact" %>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Accès *</label>
+                      <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Conditions de mises à dispositions aux autres utilisateurs"></span>
+                      <div class="radio">
+                        <label class="radio-inline">
+                          <%= f.radio_button :acces, 'open', :checked => true %> Open
+                        </label>
+                        <label class="radio-inline">
+                          <%= f.radio_button :acces, 'prive' %> Privé
+                        </label>
+                        <label class="radio-inline">
+                          <%= f.radio_button :acces, 'usage_non_commercial' %> Usage Non Commercial
+                        </label>
+                        <label class="radio-inline">
+                          <%= f.radio_button :acces, 'sous_condition' %> Sous Condition
+                        </label>
+                      </div>
+                    </div>                    
+                  </div>
+                </div>
+<!--                 <div class="row">
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Adresse</label>
+                      <textarea class="form-control" rows="1" placeholder="Adresse"></textarea>
+                    </div>
+                </div> -->
+              </div>
+              <br/>
+
+
+              <div class="row" align="center">
+                <h3>Champs de la donnée</h3>
+              </div>
+
+              <table class="table table-condensed" id="dataTable">
+                <thead>
+                  <tr>
+                    <th>Nom du champ</th>
+                    <th>Type du champ</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                  </tr>
+                  <tr>
+                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                  </tr>
+                  <tr>
+                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <INPUT type="button" value="Ajouter une ligne" onclick="addRow('dataTable')" />
+
+              <!-- <INPUT type="button" value="Delete Row" onclick="deleteRow('dataTable')" /> -->
+              <br/>
+              <br/>
+              <br/>              
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+// $("input:checkbox").on("click", function() {
+//     $("input:text").attr("disabled", true);
+    
+//     $(this).next("input").attr("disabled", false)
+// });
+
+var startDate = new Date();
+var fechaFin = new Date();
+var FromEndDate = new Date();
+var ToEndDate = new Date();
+
+
+
+
+$('.from').datepicker({
+    autoclose: true,
+    minViewMode: 1,
+    format: 'mm/yyyy'
+}).on('changeDate', function(selected){
+        startDate = new Date(selected.date.valueOf());
+        startDate.setDate(startDate.getDate(new Date(selected.date.valueOf())));
+        $('.to').datepicker('setStartDate', startDate);
+    }); 
+
+$('.to').datepicker({
+    autoclose: true,
+    minViewMode: 1,
+    format: 'mm/yyyy'
+}).on('changeDate', function(selected){
+        FromEndDate = new Date(selected.date.valueOf());
+        FromEndDate.setDate(FromEndDate.getDate(new Date(selected.date.valueOf())));
+        $('.from').datepicker('setEndDate', FromEndDate);
+    });
+
+
+
+
+
+    function addRow(tableID) {
+
+      var table = document.getElementById(tableID);
+
+      var rowCount = table.rows.length;
+      var row = table.insertRow(rowCount);
+
+      var cell0 = row.insertCell(0);
+      var element0 = document.createElement("input");
+      element0.type = "input";
+      element0.name="chkbox[]";
+      element0.class="form-control";
+      cell0.appendChild(element0);
+
+      var cell1 = row.insertCell(1);
+      var element1 = document.createElement("input");
+      element1.type = "input";
+      element1.name="chkbox[]";
+      element1.class="form-control";
+      cell1.appendChild(element1);
+
+      var cell2 = row.insertCell(2);
+      var element2 = document.createElement("input");
+      element2.type = "input";
+      element2.name = "txtbox[]";
+      cell2.appendChild(element2);
+
+
+    }
+
+    function deleteRow(tableID) {
+      try {
+      var table = document.getElementById(tableID);
+      var rowCount = table.rows.length;
+
+      for(var i=0; i<rowCount; i++) {
+        var row = table.rows[i];
+        var chkbox = row.cells[0].childNodes[0];
+        //if(null != chkbox && true == chkbox.checked) {
+          table.deleteRow(i);
+          rowCount--;
+          i--;
+        //}
+
+
+      }
+      }catch(e) {
+        alert(e);
+      }
+    }
+
+
+
+</script>
+
+
+<script type="text/javascript">
+//hide-unhide file uploads
+  $(function() {
+  
+  // Get the form fields and hidden div
+ 
+  
+  // Hide the fields.
+  // Use JS to do this in case the user doesn't have JS 
+  // enabled.
+  $("#shape_file").hide();
+  $(".shape").change(function() {
+    if ($(".shape").is(':checked')) {
+      $("#shape_file").show();
+
+    } else {
+      $("#shape_file").hide(); 
+    }
+  });
+
+  $("#excel_file").hide();
+  $(".excel").change(function() {
+    if ($(".excel").is(':checked')) {
+      $("#excel_file").show();
+
+    } else {
+      $("#excel_file").hide(); 
+    }
+  });
+
+
+  $("#texte_file").hide();
+  $(".texte").change(function() {
+    if ($(".texte").is(':checked')) {
+      $("#texte_file").show();
+
+    } else {
+      $("#texte_file").hide(); 
+    }
+  });
+
+
+  $("#access_file").hide();
+  $(".access").change(function() {
+    if ($(".access").is(':checked')) {
+      $("#access_file").show();
+
+    } else {
+      $("#access_file").hide(); 
+    }
+  });
+
+
+  $("#autre_file").hide();
+  $(".autre").change(function() {
+    if ($(".autre").is(':checked')) {
+      $("#autre_file").show();
+
+    } else {
+      $("#autre_file").hide(); 
+    }
+  });
+
+
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
