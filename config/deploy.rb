@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock "3.8.1"
+lock "3.10.1"
 
 set :application, "cirmar"
 #set :repo_url, "https://rajabia:16051985@forgeb1.univ-lehavre.fr/cirmar-interface"
