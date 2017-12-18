@@ -1,31 +1,192 @@
-<p id="notice"><%= notice %></p>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="/assets/logos/logo_cirmar_small.png" style="margin-top: -10px; margin-left: 10px;">
+          </a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+<!--        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li> -->
+        <li><a href="/stats">Stats</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">AIS <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/messages">Messages</a></li>
+            <li><a href="/covered_ships">Covered Ships</a></li>
+          </ul>
+        </li>
+        <li><a href="/ships">Ships</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Metadonnees <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/metadonnees">Liste de métadonnées</a></li>
+            <li><a href="/metadonnees/new">Fiche métadonnées</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome!</a></li>
+        <li><a href="/users/sign_out"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+  <br/>
+  <br/>
+  <br/>
 
-<p>
-  <strong>Titre:</strong>
-  <%= @metadonnee.titre %>
-</p>
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <div class="row">
+      <div class="panel panel-primary">
+        <div class="panel-heading">          
+          <h4 class="panel-title">Description de la donnée</h4>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Titre</th>
+                <th>Descriptif</th>
+                <th>Date</th>
+                <th>Couverture géographique</th>
+                <th>Nombre d’entités</th>
+                <th>Thématique</th>
+                <th>Format</th>
+                <th colspan="1"></th>
+              </tr>
+            </thead>
 
-<p>
-  <strong>Descriptif:</strong>
-  <%= @metadonnee.descriptif %>
-</p>
+            <tbody>
+              <tr>
+                <td><%= @metadonnee.titre %></td>
+                <td><%= @metadonnee.descriptif %></td>
+                <td><%= @metadonnee.date %></td>
+                <td><%= @metadonnee.couverture %></td>
+                <td><%= @metadonnee.nombre %></td>
+                <td>
+                  <% @metadonnee.thematique.each do |file| %>
+                    <%= file + "   " %>
+                  <% end %>
+                </td>
+                <td><%= @metadonnee.format %></td>
+                <td><%= link_to "Download", @metadonnee.file.url %></td>
+              </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @metadonnee.date %>
-</p>
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <div class="row">
+      <div class="panel panel-primary">
+        <div class="panel-heading">          
+          <h4 class="panel-title">Option pour les données géographiques</h4>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Géocodé à</th>
+                <th>Projection</th>
+                <th>Type</th>
+              </tr>
+            </thead>
 
-<p>
-  <strong>Couverture:</strong>
-  <%= @metadonnee.couverture %>
-</p>
-<p>
-  <strong>Thematique:</strong>
-  <%= @metadonnee.thematique %>
-</p>
-<p>
-  <strong>Format:</strong>
-  <%= @metadonnee.format %>
-</p>
-<%= link_to 'Edit', edit_metadonnee_path(@metadonnee) %> |
-<%= link_to 'Back', metadonnees_path %>
+            <tbody>
+              <tr>
+                <td><%= @metadonnee.geocode %></td>
+                <td><%= @metadonnee.projection %></td>
+                <td><%= @metadonnee.type %></td>
+              </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <div class="row">
+      <div class="panel panel-primary">
+        <div class="panel-heading">          
+          <h4 class="panel-title">Source de la donnée</h4>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Organisme émeteur</th>
+                <th>Mail contact</th>
+                <th>Périodicité de la mise à jour</th>
+                <th>Nom contact</th>
+                <th>Tél. contact</th>
+                <th>Accès</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><%= @metadonnee.organisme %></td>
+                <td><%= @metadonnee.mail %></td>
+                <td><%= @metadonnee.periodicite %></td>
+                <td><%= @metadonnee.nom %></td>
+                <td><%= @metadonnee.tel %></td>
+                <td><%= @metadonnee.acces %></td>
+              </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <div class="row">
+      <div class="panel panel-primary">
+        <div class="panel-heading">          
+          <h4 class="panel-title">Champs de la donnée</h4>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Nom du Champ</th>
+                <th>Type du Champ</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+                <% @metadonnee.champs.each do |row| %>
+                  <tr>
+                    <td><%= row[:nom] %></td>
+                    <td><%= row[:type] %></td>
+                    <td><%= row[:description] %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+          </table>
+          <br>
+          <%= link_to 'Edit', edit_metadonnee_path(@metadonnee) %> |
+          <%= link_to 'Back', metadonnees_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

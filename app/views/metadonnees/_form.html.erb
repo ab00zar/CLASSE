@@ -1,3 +1,5 @@
+
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -15,13 +17,14 @@
 
 <%= form_for(metadonnee) do |f| %>
   <% if metadonnee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(metadonnee.errors.count, "error") %> prohibited this metadonnee from being saved:</h2>
+    <div id="error_explanation" class="alert alert-danger">
+      <div style="font-size: 18px;"><%= pluralize(metadonnee.errors.count, "errur") %> ont empêché cette métadonnée d'être sauvegardée:</div>
 
       <ul>
-      <% metadonnee.errors.full_messages.each do |message| %>
+        <li>Les champs avec * doivent être remplis!</li>
+<!--       <% metadonnee.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+      <% end %> -->
       </ul>
     </div>
   <% end %>
@@ -238,37 +241,59 @@
                     <th>Description</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
-                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
-                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                <tbody class="rows">
+                   <tr>
+                    <td><%= f.text_field :ndc1, :class =>"form-control" %></td>
+                    <td><%= f.text_field :tdc1, :class =>"form-control" %></td>
+                    <td><%= f.text_field :ddc1, :class =>"form-control" %></td>
                   </tr>
                   <tr>
-                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
-                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
-                    <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                    <td><%= f.text_field :ndc2, :class =>"form-control" %></td>
+                    <td><%= f.text_field :tdc2, :class =>"form-control" %></td>
+                    <td><%= f.text_field :ddc2, :class =>"form-control" %></td>
+                  </tr>
+                   <tr>
+                    <td><%= f.text_field :ndc3, :class =>"form-control" %></td>
+                    <td><%= f.text_field :tdc3, :class =>"form-control" %></td>
+                    <td><%= f.text_field :ddc3, :class =>"form-control" %></td>
                   </tr>
                   <tr>
+                    <td><%= f.text_field :ndc4, :class =>"form-control" %></td>
+                    <td><%= f.text_field :tdc4, :class =>"form-control" %></td>
+                    <td><%= f.text_field :ddc4, :class =>"form-control" %></td>
+                  </tr>
+                  <tr>
+                    <td><%= f.text_field :ndc5, :class =>"form-control" %></td>
+                    <td><%= f.text_field :tdc5, :class =>"form-control" %></td>
+                    <td><%= f.text_field :ddc5, :class =>"form-control" %></td>
+                  </tr>
+<!--                   <tr>
                     <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
                     <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
                     <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
+                  </tr> -->
+<!--                   <tr>
+                    <%= f.fields_for :rows do |builder| %>
+                      <%= render 'row_fields', f: builder %>
+                    <% end %>
+                  </tr> -->
+                  
                   </tr>
                 </tbody>
               </table>
               
-              <INPUT type="button" value="Ajouter une ligne" onclick="addRow('dataTable')" />
+              <!-- <INPUT type="button" value="Ajouter une ligne" onclick="addRow('dataTable')" /> -->
 
               <!-- <INPUT type="button" value="Delete Row" onclick="deleteRow('dataTable')" /> -->
               <br/>
               <br/>
-              <br/>              
 
-
+ 
 
   <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit 'Soumettre', class: "btn btn-default" %>
+<!--     <%= link_to_add_association 'Add row', f, :rows, class: 'btn btn-primary' %>
+ -->  </div>
 <% end %>
 
 
@@ -322,63 +347,63 @@ $('.to').datepicker({
 
 
 
-    function addRow(tableID) {
+    // function addRow(tableID) {
 
-      var table = document.getElementById(tableID);
+    //   var table = document.getElementById(tableID);
 
-      var rowCount = table.rows.length;
-      var row = table.insertRow(rowCount);
+    //   var rowCount = table.rows.length;
+    //   var row = table.insertRow(rowCount);
 
-      var cell0 = row.insertCell(0);
-      var element0 = document.createElement("input");
-      element0.type = "input";
-      element0.name="chkbox[]";
-      element0.class="form-control";
-      cell0.appendChild(element0);
+    //   var cell0 = row.insertCell(0);
+    //   var element0 = document.createElement("input");
+    //   element0.type = "input";
+    //   element0.name="chkbox[]";
+    //   element0.class="form-control";
+    //   cell0.appendChild(element0);
 
-      var cell1 = row.insertCell(1);
-      var element1 = document.createElement("input");
-      element1.type = "input";
-      element1.name="chkbox[]";
-      element1.class="form-control";
-      cell1.appendChild(element1);
+    //   var cell1 = row.insertCell(1);
+    //   var element1 = document.createElement("input");
+    //   element1.type = "input";
+    //   element1.name="chkbox[]";
+    //   element1.class="form-control";
+    //   cell1.appendChild(element1);
 
-      var cell2 = row.insertCell(2);
-      var element2 = document.createElement("input");
-      element2.type = "input";
-      element2.name = "txtbox[]";
-      cell2.appendChild(element2);
-
-
-    }
-
-    function deleteRow(tableID) {
-      try {
-      var table = document.getElementById(tableID);
-      var rowCount = table.rows.length;
-
-      for(var i=0; i<rowCount; i++) {
-        var row = table.rows[i];
-        var chkbox = row.cells[0].childNodes[0];
-        //if(null != chkbox && true == chkbox.checked) {
-          table.deleteRow(i);
-          rowCount--;
-          i--;
-        //}
+    //   var cell2 = row.insertCell(2);
+    //   var element2 = document.createElement("input");
+    //   element2.type = "input";
+    //   element2.name = "txtbox[]";
+    //   cell2.appendChild(element2);
 
 
-      }
-      }catch(e) {
-        alert(e);
-      }
-    }
+    // }
+
+    // function deleteRow(tableID) {
+    //   try {
+    //   var table = document.getElementById(tableID);
+    //   var rowCount = table.rows.length;
+
+    //   for(var i=0; i<rowCount; i++) {
+    //     var row = table.rows[i];
+    //     var chkbox = row.cells[0].childNodes[0];
+    //     //if(null != chkbox && true == chkbox.checked) {
+    //       table.deleteRow(i);
+    //       rowCount--;
+    //       i--;
+    //     //}
+
+
+    //   }
+    //   }catch(e) {
+    //     alert(e);
+    //   }
+    // }
 
 
 
 </script>
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 //hide-unhide file uploads
   $(function() {
   
@@ -443,11 +468,8 @@ $('.to').datepicker({
 
 
 });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+</script> -->
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
-<!-- (Optional) Latest compiled and minified JavaScript translation files -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script> -->

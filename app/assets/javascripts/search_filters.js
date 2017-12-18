@@ -1,8 +1,6 @@
 var ready = function(){
 
 
-  
-
 
 ////////////////   Search Filter - Type de messages    ///////////////////////////////////
   $(function() {

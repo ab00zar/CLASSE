@@ -99,10 +99,11 @@ development:
         # The file containing a set of concatenated certification authority certifications
         # used to validate certs passed from the other end of the connection.
         # ssl_ca_cert: /path/to/ca.cert
-
+        allow_dynamic_fields: true
 
   # Configure Mongoid specific options. (optional)
   options:
+    
     # Includes the root model name in json serialization. (default: false)
     # include_root_in_json: false
 

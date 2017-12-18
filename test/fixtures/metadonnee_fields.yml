@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  champ_nom: MyString
+  champ_type: MyString
+  champ_description: MyString
+  metadonnee: one
+
+two:
+  champ_nom: MyString
+  champ_type: MyString
+  champ_description: MyString
+  metadonnee: two

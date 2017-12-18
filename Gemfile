@@ -53,7 +53,8 @@ group :development do
 end
 
 gem "mongoid-paperclip"
-
+gem "cocoon"
+gem 'bootstrap-select-rails'
 gem 'devise'
 gem 'kaminari'
 gem 'rails_12factor', group: :production
