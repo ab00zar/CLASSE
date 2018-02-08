@@ -15,6 +15,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 
 
+
+
+
 <%= form_for(metadonnee) do |f| %>
   <% if metadonnee.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
@@ -22,9 +25,9 @@
 
       <ul>
         <li>Les champs avec * doivent être remplis!</li>
-<!--       <% metadonnee.errors.full_messages.each do |message| %>
+       <% metadonnee.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %> -->
+      <% end %>
       </ul>
     </div>
   <% end %>
@@ -47,7 +50,24 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Date *</label>
                     <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Date de référence de la ressource"></span>
-                    <%= f.text_field :date, :class =>"form-control from", :placeholder => "Date" %>
+
+
+                    <div class="radio">
+                      <label class="radio-inline">
+                        <%= f.radio_button :date, 'mm/yyyy', :onclick => "document.getElementById('date1').disabled = false; document.getElementById('date2').disabled = true;", :type => "radio", :name => "type", :checked => "checked" %> 
+<!--                         <input type="input" class="form-control from" id="custom1" placeholder="mm/yyyy"> -->
+                         <%= f.text_field :date1, :id => "date1", :name => "date1", :class =>"form-control from", :placeholder => "mm/yyyy" %>
+                      </label>
+                      <label class="radio-inline">
+                        <%= f.radio_button :date, 'yyyy', onclick: "document.getElementById('date1').disabled = true; document.getElementById('date2').disabled = false;", type: "radio", name: "type" %> 
+<!--                         <input type="input" class="form-control to" id="custom2" placeholder="yyyy"> -->
+                         <%= f.text_field :date2, :id => "date2", :name => "date2", :class =>"form-control to", :placeholder => "yyyy", disabled: "disabled" %>
+                       </label>
+                    </div>
+
+
+<!--                     
+                    <%= f.text_field :date, :class =>"form-control from", :placeholder => "Date" %> -->
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Couverture géographique</label>
@@ -76,6 +96,9 @@
                       <option>Société</option>
                     </select> -->
                     <%= f.select :thematique, "<option>Transport</option>
+                      <option>Transport maritime</option>
+                      <option>Transport terrestre</option>
+                      <option>Port</option>
                       <option>Environnement</option>
                       <option>Frontières, limites administratives</option>
                       <option>Économie</option>
@@ -242,12 +265,12 @@
                   </tr>
                 </thead>
                 <tbody class="rows">
-                   <tr>
+<!--                   <tr>
                     <td><%= f.text_field :ndc1, :class =>"form-control" %></td>
                     <td><%= f.text_field :tdc1, :class =>"form-control" %></td>
                     <td><%= f.text_field :ddc1, :class =>"form-control" %></td>
                   </tr>
-                  <tr>
+                   <tr>
                     <td><%= f.text_field :ndc2, :class =>"form-control" %></td>
                     <td><%= f.text_field :tdc2, :class =>"form-control" %></td>
                     <td><%= f.text_field :ddc2, :class =>"form-control" %></td>
@@ -266,29 +289,35 @@
                     <td><%= f.text_field :ndc5, :class =>"form-control" %></td>
                     <td><%= f.text_field :tdc5, :class =>"form-control" %></td>
                     <td><%= f.text_field :ddc5, :class =>"form-control" %></td>
-                  </tr>
+                  </tr> -->
 <!--                   <tr>
                     <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
                     <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
                     <td><input type="input" class="form-control" id="exampleInputPassword1"></td>
                   </tr> -->
-<!--                   <tr>
-                    <%= f.fields_for :rows do |builder| %>
-                      <%= render 'row_fields', f: builder %>
-                    <% end %>
-                  </tr> -->
+                   
+
+                    <tr id="addresses">
+                      <%= f.fields_for :rows do |address| %>
+                        <%= render 'row_fields', f: address %>
+                      <% end %>
+
+
+                    </tr>
                   
-                  </tr>
+                  
                 </tbody>
               </table>
-              
+              <div class="links">
+                <%= link_to_add_association 'Ajouter', f, :rows %>
+              </div>
               <!-- <INPUT type="button" value="Ajouter une ligne" onclick="addRow('dataTable')" /> -->
 
               <!-- <INPUT type="button" value="Delete Row" onclick="deleteRow('dataTable')" /> -->
               <br/>
               <br/>
 
- 
+              
 
   <div class="actions">
     <%= f.submit 'Soumettre', class: "btn btn-default" %>
@@ -326,21 +355,25 @@ var ToEndDate = new Date();
 $('.from').datepicker({
     autoclose: true,
     minViewMode: 1,
+    startDate: "01/2000",
+    endDate: "12/2020",
     format: 'mm/yyyy'
-}).on('changeDate', function(selected){
-        startDate = new Date(selected.date.valueOf());
-        startDate.setDate(startDate.getDate(new Date(selected.date.valueOf())));
-        $('.to').datepicker('setStartDate', startDate);
+// }).on('changeDate', function(selected){
+//         startDate = new Date(selected.date.valueOf());
+//         startDate.setDate(startDate.getDate(new Date(selected.date.valueOf())));
+//         $('.to').datepicker('setStartDate', startDate);
     }); 
 
 $('.to').datepicker({
     autoclose: true,
-    minViewMode: 1,
-    format: 'mm/yyyy'
-}).on('changeDate', function(selected){
-        FromEndDate = new Date(selected.date.valueOf());
-        FromEndDate.setDate(FromEndDate.getDate(new Date(selected.date.valueOf())));
-        $('.from').datepicker('setEndDate', FromEndDate);
+    minViewMode: 2,
+    format: 'yyyy',
+    startDate: "2000",
+    endDate: '2020'
+// }).on('changeDate', function(selected){
+//         FromEndDate = new Date(selected.date.valueOf());
+//         FromEndDate.setDate(FromEndDate.getDate(new Date(selected.date.valueOf())));
+//         $('.from').datepicker('setEndDate', FromEndDate);
     });
 
 
@@ -473,3 +506,4 @@ $('.to').datepicker({
 
     <!-- (Optional) Latest compiled and minified JavaScript translation files -->
 <!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script> -->
+

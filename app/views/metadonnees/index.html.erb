@@ -66,16 +66,18 @@
                   <td><%= metadonnee.date %></td>
                   <td><%= metadonnee.acces %></td>
                   <% if metadonnee.acces != "open" and ['test@test.com', 'a@b.com', 'rajabi.aboozar@gmail.com', 'claude.duvallet@univ-lehavre.fr', 'arnaud.serry@univ-lehavre.fr'].exclude?(current_user.email) %>
-                     <td>Vous n'avez pas suffisamment accès aux métadonnées privées!</td>
+                      <td>Vous n'avez pas suffisamment accès aux métadonnées privées!</td>
+                  <% elsif metadonnee.acces == "open" and ['test@test.com', 'a@b.com', 'rajabi.aboozar@gmail.com', 'claude.duvallet@univ-lehavre.fr', 'arnaud.serry@univ-lehavre.fr'].exclude?(current_user.email) %>
+                      <td><%= link_to 'Voir  ', metadonnee %></td>
                   <% else %>
-                    <td><%= link_to 'Show  ', metadonnee %><%= link_to '  Edit  ', edit_metadonnee_path(metadonnee) %><%= link_to '  Destroy', metadonnee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                      <td><%= link_to 'Voir  ', metadonnee %><%= ' '%><%= link_to '  Edit  ', edit_metadonnee_path(metadonnee) %><%= ' '%><%= link_to '  Suprime', metadonnee, method: :delete, data: { confirm: 'êtes-vous sûr?' } %></td>
                   <% end %>
                 </tr>
               <% end %>
             </tbody>
         </table>
         <br>
-        <%= link_to 'New Metadonnee', new_metadonnee_path %>
+        <%= link_to 'Ajouter Metadonnee', new_metadonnee_path %>
       </div>
     </div>
   </div>

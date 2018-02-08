@@ -1,11 +1,15 @@
 
 
-<fieldset>
+    
+      
+        
+    <div class="col-sm-4"><%= f.text_field :champ_nom, :class =>"form-control" %></div>
+    <div class="col-sm-4"><%= f.text_field :champ_type, :class =>"form-control" %></div>
+    <div class="col-sm-4"><%= f.text_field :champ_description, :class =>"form-control" %></div>
+<!--     <td><%= f.check_box :_destroy, :class =>"form-control" %><%= link_to_remove_association "remove address", f %></td> -->
+	<br/>
+    <br/>  
+        
+      
 
-  <td><%= f.text_field :champ_nom, :class =>"form-control", placeholder: "field_name" %></td>
-  <td><%= f.text_field :champ_type, :class =>"form-control", placeholder: "field_name" %></td>
-  <td><%= f.text_field :champ_description, :class =>"form-control", placeholder: "field_name" %></td>
-
-  <td><%= link_to "remove", '#', class: "remove_fields" %></td>
-</fieldset>
-
+                  

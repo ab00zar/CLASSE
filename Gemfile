@@ -52,6 +52,10 @@ group :development do
   gem 'capistrano-rvm', '~> 0.1.2'
 end
 
+
+#gem 'nested_form_fields'
+#gem "cocoon"
+
 gem "mongoid-paperclip"
 gem "cocoon"
 gem 'bootstrap-select-rails'

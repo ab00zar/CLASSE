@@ -4,33 +4,17 @@ class Metadonnee
   include Mongoid::Attributes::Dynamic
   #include Mongoid::Timestamps
   
-  validates :titre, :descriptif, :date, :organisme, :mail, :nom, :file, :thematique, presence: true
+  validates :titre, :descriptif, :organisme, :mail, :nom, :date, :thematique, presence: true
   
-  #embeds_many :rows
-  has_many :rows, inverse_of: :metadonnee
-
-
-  #accepts_nested_attributes_for :rows, allow_destroy: true
-
-  has_mongoid_attached_file :shape_file
-  do_not_validate_attachment_file_type :shape_file
-
-  has_mongoid_attached_file :excel_file
-  do_not_validate_attachment_file_type :excel_file
-
-  has_mongoid_attached_file :texte_file
-  do_not_validate_attachment_file_type :texte_file
-
-  has_mongoid_attached_file :access_file
-  do_not_validate_attachment_file_type :access_file
-
-  has_mongoid_attached_file :autre_file
-  do_not_validate_attachment_file_type :autre_file
+  
+  has_many :rows, dependent: :destroy, inverse_of: :metadonnee, autosave: true
+  accepts_nested_attributes_for :rows, allow_destroy: true, 
+    reject_if: ->(attrs) { attrs['champ_nom'].blank? && attrs['champ_type'].blank? && attrs['champ_description'].blank?}
 
   has_mongoid_attached_file :file
   do_not_validate_attachment_file_type :file
-
-
+  #validates_attachment :file, presence: true, size: { in: 0..40000.kilobytes }
+  #validates :file, file_size: { less_than: 30.megabytes }
   field :titre, type: String
   field :descriptif, type: String
   field :date, type: String
@@ -39,6 +23,9 @@ class Metadonnee
   field :thematique, type: Array
   field :format, type: String
   field :autre, type: String
+
+  field :date1, type: String
+  field :date2, type: String
 
   field :file
 
@@ -55,7 +42,7 @@ class Metadonnee
 
   field :created_by, type: String
 
-  field :champs, type: Array
+  field :champs, type: Hash
 
   field :ndc1, type: String
   field :tdc1, type: String

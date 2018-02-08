@@ -173,11 +173,11 @@
             </thead>
 
             <tbody>
-                <% @metadonnee.champs.each do |row| %>
+                <% @metadonnee.rows.each do |row| %>
                   <tr>
-                    <td><%= row[:nom] %></td>
-                    <td><%= row[:type] %></td>
-                    <td><%= row[:description] %></td>
+                    <td><%= row[:champ_nom] %></td>
+                    <td><%= row[:champ_type] %></td>
+                    <td><%= row[:champ_description] %></td>
                   </tr>
                 <% end %>
               </tbody>
